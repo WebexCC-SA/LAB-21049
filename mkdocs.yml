@@ -89,7 +89,13 @@ nav:
   # - Welcome: welcome.md
   - Lab:
       - Overview: overview.md
-      - Lab 1 - Getting Started: Lab1.md
+      - Lab 1 - Basic Ingress: Lab1.md
+      - Lab 2 - DTMF IVR: Lab2.md
+      - Lab 3 - Queue Loop and Agent Desktop: Lab3.md
+      - Lab 4 - Speech IVA: Lab4.md
+      - Lab 5 - Enhancing the Queue: Lab1.md
+      - Lab 6 - Custom Global Variable Reporting: Lab6.md
+      - Bonus Lab - Digital Queue: Lab7.md 
       - Conclusion: conclusion.md
   - Topologies: topologies.md
   - How to use this guide:
