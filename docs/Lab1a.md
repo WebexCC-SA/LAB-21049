@@ -1,9 +1,3 @@
-Contents
-
-[Lab 1 – Basic Ingress 2](#_Toc237547196)
-
-[Walkthrough Lab 1 2](#_Toc237547197)
-
 ## Objective:
 
 1. Build a simple script in Webex Contact Center (WxCC) using the existing Contact Center Enterprise (CCE) flow as a template.
@@ -13,7 +7,7 @@ Contents
 
 * Lab 0 familiarity with both CCE and WxCC environment and logins.
 
-## Walkthrough Lab 1
+## Steps
 
 * Open up CCE Script Editor
 
@@ -32,11 +26,11 @@ Contents
 
 ![](assets/docx-image-004.png)
 
-* + Accept the Terms of Service
+  + Accept the Terms of Service
 
 ![](assets/docx-image-005.png)
 
-* + Click Accept All
+  + Click Accept All
 * Click on the Contact Center under the Services section
 
 ![](assets/docx-image-006.png)
