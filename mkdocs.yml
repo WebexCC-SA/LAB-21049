@@ -89,7 +89,7 @@ nav:
   # - Welcome: welcome.md
   - Lab:
       - Overview: overview.md
-      - Lab 1 - Basic Ingress: Lab1.md
+      - Lab 1 - Basic Ingress: Lab1a.md
       - Lab 2 - DTMF IVR: Lab2.md
       - Lab 3 - Queue Loop and Agent Desktop: Lab3.md
       - Lab 4 - Speech IVA: Lab4.md
