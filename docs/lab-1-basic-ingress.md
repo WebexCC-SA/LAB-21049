@@ -8,7 +8,8 @@
 
 ## Prerequisites:
 
-* Lab 0 familiarity with both CCE and WxCC environment and logins.
+* CCE Base and Lab Overview
+   + familiarity with both CCE and WxCC environment and logins.
 
 ## Instructions: Lab 1
 

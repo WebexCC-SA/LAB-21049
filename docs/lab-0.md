@@ -98,13 +98,13 @@
   + Enter your username **(**[**STUxx.admin@wx1ccelab.wbx.ai**](mailto:STUxx.admin@wx1ccelab.wbx.ai)**)** where “xx” is your student number
   + Enter your password: **Migration101!**
 
+![alt text](assets/image.png)
+
 ![](assets/docx-image-017.png)
 
 ![](assets/docx-image-018.png)
 
-* Accept the Terms of Service
-
-![](assets/docx-image-019.png)
+* Accept the Terms of Service ![](assets/docx-image-019.png)
 
 * Click Accept All
 * Entitlement and Licensing

@@ -97,16 +97,4 @@ nav:
       - Lab 6 - Custom Global Variable Reporting: Lab6.md
       - Bonus Lab - Digital Queue: Lab7.md 
       - Conclusion: conclusion.md
-  - Topologies: topologies.md
-  - How to use this guide:
-      - Setting up and using the tool:
-        - Initial Setup: howToUse/initialSetup.md
-        - Using the tool after the initial setup: howToUse/postInitial.md
-        - Publishing your changes: howToUse/syncChanges.md
-      - Useful Tools and Resources: howToUse/usefulTools.md
-      - Importing from Word (docx): howToUse/importingFromWord.md
-      - Styling and Advanced Features:
-        - Custom Features: howToUse/customFeatures.md
-        - Custom Admonitions: howToUse/admonition.md
-      - Looking for Inspiration: howToUse/previousEventLabs.md
-      - Before the Event: howToUse/beforeTheEvent.md
+  - Architecture: architecture.md
