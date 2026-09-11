@@ -1,7 +1,8 @@
-# Lab 0
+# CCE Base and Lab Overview
 
 ## Objective:
 
+* Get students familier with the lab guide structure.
 * Get students familiar with the CCE and WxCC lab environments.
 * Ensure they all have access to configure WxCC flows and test.
 
