@@ -1,15 +1,15 @@
 # Lab 0
 
-Objective:
+## Objective:
 
 * Get students familiar with the CCE and WxCC lab environments.
 * Ensure they all have access to configure WxCC flows and test.
 
-Prerequisites:
+## Prerequisites:
 
 * Understanding of CCE terminology and CCE flow building
 
-Lab Contents:
+## Lab Contents:
 
 * 0A – CCE Flows
 * 0B – WxCC Environment and Logins
@@ -23,28 +23,28 @@ Lab Contents:
 
 ![](assets/docx-image-001.png)
 
-* + CVP Media Setup
+  + CVP Media Setup
 
 ![](assets/docx-image-002.png)
 
-* + Microapp Configuration
+  + Microapp Configuration
 
 ![](assets/docx-image-003.png)
 
-* + Audio directory configuration
+  + Audio directory configuration
   + Greeting
 
 ![](assets/docx-image-004.png)
 
-* + Switches and Percent Allocates
+  + Switches and Percent Allocates
 
 ![](assets/docx-image-005.png)
 
-* + DTMF Menu
+  + DTMF Menu
 
 ![](assets/docx-image-006.png)
 
-* + CVP Studio App/AI Agent
+  + CVP Studio App/AI Agent
 
 ![](assets/docx-image-007.png)
 
@@ -52,7 +52,7 @@ Lab Contents:
 
 ![](assets/docx-image-009.png)
 
-* + Tracking Options
+  + Tracking Options
   + Go To Script
 
 ![](assets/docx-image-010.png)
@@ -62,32 +62,32 @@ Lab Contents:
 
 ![](assets/docx-image-011.png)
 
-* + Audio directory configuration (again)
+  + Audio directory configuration (again)
   + Business Hours
 
 ![](assets/docx-image-012.png)
 
-* + “If” routing logic
+  + “If” routing logic
 
 ![](assets/docx-image-013.png)
 
-* + Audio directory configuration (again)
+  + Audio directory configuration (again)
   + Agent Whisper
 
 ![](assets/docx-image-014.png)
 
-* + Queues
+  + Queues
   + Audio directory configuration (again)
   + Queue Loop
 
 ![](assets/docx-image-015.png)
 
-* Flow Functionality
+  Flow Functionality
   + Monitor ingress flow
 
 ![](assets/docx-image-016.png)
 
-* + Call it
+  + Call it
 
 ## Student Walkthrough: Lab 0B- WxCC Environment and Logins
 
@@ -120,7 +120,7 @@ Lab Contents:
 
 ![](assets/docx-image-021.png)
 
-* + - Click on your Agent and/or Supervisor
+  + - Click on your Agent and/or Supervisor
     - Within Summary tab, scroll down to “Licenses”. Agent and Supervisor licenses shown below
     - Click “Edit Licenses.” (Instructor will show how to assign net new contact center licensing)
 
