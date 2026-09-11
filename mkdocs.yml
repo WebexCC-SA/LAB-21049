@@ -89,6 +89,7 @@ nav:
   # - Welcome: welcome.md
   - Lab:
       - Overview: overview.md
+      - Lab 0 - CCE Base and Lab Overview: lab-0.md
       - Lab 1 - Basic Ingress: Lab1a.md
       - Lab 2 - DTMF IVR: Lab2.md
       - Lab 3 - Queue Loop and Agent Desktop: Lab3.md
