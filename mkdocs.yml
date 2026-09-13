@@ -88,13 +88,12 @@ nav:
   - Home: index.md
   # - Welcome: welcome.md
   - CCE Base and Lab Overview (Lab 0): lab-0.md 
-  - Lab:
+  - Labs 1-7:
       - Lab 1 - Basic Ingress: lab-1-basic-ingress.md
       - Lab 2 - DTMF IVR: Lab2.md
       - Lab 3 - Queue Loop and Agent Desktop: Lab3.md
       - Lab 4 - Speech IVA: Lab4.md
       - Lab 5 - Enhancing the Queue: Lab1.md
       - Lab 6 - Custom Global Variable Reporting: Lab6.md
-      - Bonus Lab - Digital Queue: Lab7.md 
-      - Conclusion: conclusion.md
+      - Lab 7 (Bonus) - Digital Queue: Lab7.md 
   - Architecture: architecture.md

@@ -21,73 +21,73 @@
 * Ingress Flow Structure
   + Dialed Number to CallType to Script
 
-![](assets/docx-image-101.png)
+![](assets/docx-image-0001.png)
 
-* + CVP Media Setup
+  + CVP Media Setup
 
-![](assets/docx-image-102.png)
+![](assets/docx-image-0002.png)
 
-* + Microapp Configuration
+  + Microapp Configuration
 
-![](assets/docx-image-103.png)
+![](assets/docx-image-0003.png)
 
-* + Audio directory configuration
+  + Audio directory configuration
   + Greeting
 
-![](assets/docx-image-004.png)
+![](assets/docx-image-0004.png)
 
-* + Switches and Percent Allocates
+  + Switches and Percent Allocates
 
-![](assets/docx-image-005.png)
+![](assets/docx-image-0005.png)
 
-* + DTMF Menu
+  + DTMF Menu
 
-![](assets/docx-image-006.png)
+![](assets/docx-image-0006.png)
 
-* + CVP Studio App/AI Agent
+  + CVP Studio App/AI Agent
 
-![](assets/docx-image-007.png)
+![](assets/docx-image-0007.png)
 
-![](assets/docx-image-008.png)
+![](assets/docx-image-0008.png)
 
-![](assets/docx-image-009.png)
+![](assets/docx-image-0009.png)
 
-* + Tracking Options
+  + Tracking Options
   + Go To Script
 
-![](assets/docx-image-010.png)
+![](assets/docx-image-0010.png)
 
 * Queue Flow Structure
   + CVP Media Setup (again)
 
-![](assets/docx-image-011.png)
+![](assets/docx-image-0011.png)
 
-* + Audio directory configuration (again)
+  + Audio directory configuration (again)
   + Business Hours
 
-![](assets/docx-image-012.png)
+![](assets/docx-image-0012.png)
 
-* + “If” routing logic
+  + “If” routing logic
 
-![](assets/docx-image-013.png)
+![](assets/docx-image-0013.png)
 
-* + Audio directory configuration (again)
+  + Audio directory configuration (again)
   + Agent Whisper
 
-![](assets/docx-image-014.png)
+![](assets/docx-image-0014.png)
 
-* + Queues
+  + Queues
   + Audio directory configuration (again)
   + Queue Loop
 
-![](assets/docx-image-015.png)
+![](assets/docx-image-0015.png)
 
 * Flow Functionality
   + Monitor ingress flow
 
-![](assets/docx-image-016.png)
+![](assets/docx-image-0016.png)
 
-* + Call it
+  + Call it
 
 ## Student Walkthrough: Lab 0B- WxCC Environment and Logins
 
@@ -97,13 +97,13 @@
   + Enter your username **(**[**STUxx.admin@wx1ccelab.wbx.ai**](mailto:STUxx.admin@wx1ccelab.wbx.ai)**)** where “xx” is your student number
   + Enter your password: **Migration101!**
 
-![](assets/docx-image-017.png)
+![](assets/docx-image-0017.png)
 
-![](assets/docx-image-018.png)
+![](assets/docx-image-0018.png)
 
 * Accept the Terms of Service
 
-![](assets/docx-image-019.png)
+![](assets/docx-image-0019.png)
 
 * Click Accept All
 * Entitlement and Licensing
@@ -111,26 +111,26 @@
   + Click Account
   + This is where your Organization ID is found. You will typically be asked for this when enabling feature flags or troubleshooting issues with TAC.
 
-![](assets/docx-image-020.png)
+![](assets/docx-image-0020.png)
 
 * Enable Agent and Supervisor
   + Within Collaboration Control Hub à Management
     - Click on Users
     - Filter by your student number “STUxx”
 
-![](assets/docx-image-021.png)
+![](assets/docx-image-0021.png)
 
-* + - Click on your Agent and/or Supervisor
+  + - Click on your Agent and/or Supervisor
     - Within Summary tab, scroll down to “Licenses”. Agent and Supervisor licenses shown below
     - Click “Edit Licenses.” (Instructor will show how to assign net new contact center licensing)
 
-![](assets/docx-image-022.png)
+![](assets/docx-image-0022.png)
 
-![](assets/docx-image-023.png)
+![](assets/docx-image-0023.png)
 
 * Within Collaboration Control Hub à Services
 * Click on “Contact Center”
 
-![](assets/docx-image-024.png)
+![](assets/docx-image-0024.png)
 
 ## Finish Lab 0
