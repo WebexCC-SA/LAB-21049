@@ -87,7 +87,7 @@ markdown_extensions:
 nav:
   - Home: index.md
   # - Welcome: welcome.md
-  - CCE Base and Lab Overview: lab-0.md 
+  - CCE Base and Lab Overview (Lab 0): lab-0.md 
   - Lab:
       - Lab 1 - Basic Ingress: lab-1-basic-ingress.md
       - Lab 2 - DTMF IVR: Lab2.md

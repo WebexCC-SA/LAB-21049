@@ -1,4 +1,4 @@
-# CCE Base and Lab Overview
+# CCE Base and Lab Overview (Lab 0)
 
 ## Objective:
 
