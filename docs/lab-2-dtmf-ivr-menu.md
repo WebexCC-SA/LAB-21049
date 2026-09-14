@@ -95,7 +95,7 @@
 
 ![](assets/docx-image-2013.png)
 
-    - Under “Variable settings“ select “STUxx\_CallPath” from the drop down
+  + - Under “Variable settings“ select “STUxx\_CallPath” from the drop down
     - Set value: “STUxx\_Lab2\_IN” replacing xx with your student number
 
 ![](assets/docx-image-2014.png)
