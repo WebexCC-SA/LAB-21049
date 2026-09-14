@@ -90,7 +90,7 @@ nav:
   - CCE Base and Lab Overview (Lab 0): lab-0.md 
   - Labs 1-7:
       - Lab 1 - Basic Ingress: lab-1-basic-ingress.md
-      - Lab 2 - DTMF IVR: Lab2.md
+      - Lab 2 - DTMF IVR: lab-2-dtmf-ivr-menu.md
       - Lab 3 - Queue Loop and Agent Desktop: Lab3.md
       - Lab 4 - Speech IVA: Lab4.md
       - Lab 5 - Enhancing the Queue: Lab1.md
