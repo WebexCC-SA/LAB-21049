@@ -147,7 +147,7 @@
 
   + Click “+ Add new” under Variable settings to set another variable
     - Select “STUxx\_CallPath” variable from the pulldown
-    - Set value: “{{STUxx\_CallPath}}.english”
+    - Set value: '{{STUxx_CallPath}}.english'
       * Feel free to test with test expression icon![](assets/docx-image-2022.png) , entering STUxx\_Lab2\_IN from the SetInitialData node as the value for STUxx\_CallPath
 
 ![](assets/docx-image-2023.png)
