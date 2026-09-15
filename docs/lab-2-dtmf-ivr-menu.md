@@ -147,7 +147,7 @@
 
   + Click “+ Add new” under Variable settings to set another variable
     - Select “STUxx\_CallPath” variable from the pulldown
-    - Set value: '{{STUxx_CallPath}}.english'
+    - Set value: {{STUxx_CallPath}}.english
       * Feel free to test with test expression icon![](assets/docx-image-2022.png) , entering STUxx\_Lab2\_IN from the SetInitialData node as the value for STUxx\_CallPath
 
 ![](assets/docx-image-2023.png)
@@ -158,7 +158,7 @@
     - Description: (Optional)
     - For variable “menu\_selection”
     - Set value: “Spanish”
-    - For variable 'STUxx_CallPath', set value: '{{STUxx_CallPath}}.spanish'
+    - For variable STUxx_CallPath, set value: {{STUxx_CallPath}}.spanish
       * (Feel free to test with test expression icon)
     - Connect Main\_Menu option 2 path to new “SetVar\_Opt2” node
 
@@ -175,8 +175,8 @@
     - Select “Cisco Cloud Text-to-Speech” from Connector pull down
     - Click “Add text-to-speech message” button twice
     - Click trashcan to delete audio file entry
-    - In the first text-to-speech message: “You picked '{{menu_selection}}' path” (no quotes)
-    - In the second text-to-speech message: “This was option '{{Main_Menu.OptionEntered}}'” (no quotes)
+    - In the first text-to-speech message: You picked {{menu_selection}} path.
+    - In the second text-to-speech message: This was option {{Main_Menu.OptionEntered}}
   + Connect the exit of the PlayMessage node to the DisconnectContact Node
 
 ![](assets/docx-image-2026.png)
