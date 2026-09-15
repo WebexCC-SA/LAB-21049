@@ -176,7 +176,7 @@
     - Click “Add text-to-speech message” button twice
     - Click trashcan to delete audio file entry
     - In the first text-to-speech message: You picked {{menu_selection}} path.
-    - In the second text-to-speech message: This was option `{{Main_Menu.OptionEntered}}`
+    - In the second text-to-speech message: This was option `{% raw %}{{Main_Menu.OptionEntered}}{% endraw %}`
   + Connect the exit of the PlayMessage node to the DisconnectContact Node
 
 ![](assets/docx-image-2026.png)
