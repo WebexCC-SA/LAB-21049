@@ -1,5 +1,3 @@
 # Webex Contact Center Architecture
 
-<https://help.webex.com/en-us/article/utqcm7/Webex-Contact-Center-Architecture>
-
 <a href="https://help.webex.com/en-us/article/utqcm7/Webex-Contact-Center-Architecture" target="_blank" rel="noopener noreferrer">Click here to open WxCC architecture online documentation</a>
