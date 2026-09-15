@@ -111,7 +111,7 @@
 
 * Copy/Paste the UpdateCallPath\_SpanishQueue node
   + Update Activity label: UpdateCallPath\_Closed
-  + Update Variable settings 🡪set value: `{% raw %}{{STUxx\_CallPath}}.BH\_closed{% endraw %}`
+  + Update Variable settings 🡪set value: `{% raw %}{{STUxx_CallPath}}.BH_closed{% endraw %}`
 
 ![](assets/docx-image-5011.png)
 
@@ -160,7 +160,7 @@
   + Activity label: Play\_PIQ\_EWT
   + Prompt 🡪 Enable text-to-speech
   + Connector: Cisco Cloud Text-To-Speech
-  + Click “Add text-to-speech message”: `{% raw %}Your position in queue is {{GetQueueInfo\_English.PIQ}} . Your estimated wait time in {{GetQueueInfo\_English.EWT}}.{% endraw %}`
+  + Click “Add text-to-speech message”: `{% raw %}Your position in queue is {{GetQueueInfo_English.PIQ}} . Your estimated wait time in {{GetQueueInfo_English.EWT}}.{% endraw %}`
   + Delete Audio file
 
 ![](assets/docx-image-5016.png)
@@ -214,7 +214,7 @@
 
 * Copy/Paste the UpdateCallPath\_Closed node
   + Activity label: UpdateCallPath\_CCB
-  + Variable settings 🡪 Set value: `{% raw %}{{STUxx\_CallPath}}.CCB{% endraw %}`
+  + Variable settings 🡪 Set value: `{% raw %}{{STUxx_CallPath}}.CCB{% endraw %}`
 
 ![](assets/docx-image-5021.png)
 
@@ -339,14 +339,14 @@
   + Note: you can do this between flows also but both have to be in Edit mode
 * Find the newly pasted node 😊 by zooming out or clicking the 9 dots to make it appear at the bottom of the green trigger nodes. Move it near the PhoneContactEnded event node.
   + Activity label: UpdateCallPath\_CallerHangup
-  + Update set value: `{% raw %}{{STUxx\_CallPath}}.CallerHangUp{% endraw %}`
+  + Update set value: `{% raw %}{{STUxx_CallPath}}.CallerHangUp{% endraw %}`
 * Insert the UpdateCallPath\_CallerHangUp between PhoneContactEnded event node and Endflow node
 
 ![](assets/docx-image-5035.png)
 
 * Copy/Paste UpdateCallPath\_CallerHangUp
   + Activity label: UpdateCallPath\_AgentHangUp
-  + Update set value: `{% raw %}{{STUxx\_CallPath}}.AgentHangUp{% endraw %}`
+  + Update set value: `{% raw %}{{STUxx_CallPath}}.AgentHangUp{% endraw %}`
 * Insert the UpdateCallPath\_AgentHangUp between AgentDisconnected event node and Endflow node
 * Click Validation
 * Click Publish Flow as latest

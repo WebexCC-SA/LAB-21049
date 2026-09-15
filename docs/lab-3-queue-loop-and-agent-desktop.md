@@ -19,8 +19,8 @@
 
 ## Lab Contents:
 
-* [3A – Queue Loop](#_Walkthrough_Lab_3A)
-* [3B – Agent Desktop](#_Walkthrough_Lab_3B)
+* [3A – Queue Loop](#instructions-lab-3a-queue-loop)
+* [3B – Agent Desktop](#instructions-lab-3b-agent-desktop)
 
 ## Instructions: Lab 3A – Queue Loop
 
@@ -241,7 +241,7 @@
     - Rename the Activity Label: UpdateCallPath\_EnglishQueue
     - Activity description: Update the caller path variable
     - Select “STUxx\_CallPath” global variable in the Variable pull down
-    - Set value: `{% raw %}{{STUxx\_CallPath}}.EnglishQ{% endraw %}`
+    - Set value: `{% raw %}{{STUxx_CallPath}}.EnglishQ{% endraw %}`
 
 ![](assets/docx-image-3025.png)
 
@@ -250,7 +250,7 @@
     - Rename the Activity label: UpdateCallPath\_SpanishQueue
     - Description: Update the caller path variable
     - Select “STUxx\_CallPath” global variable in the Variable pull down
-    - Set value: `{% raw %}{{STUxx\_CallPath}}.SpanishQ{% endraw %}`
+    - Set value: `{% raw %}{{STUxx_CallPath}}.SpanishQ{% endraw %}`
   + Connect Case node English path to UpdateCallPath\_EnglishQueue node
   + Connect Case node Spanish path to UpdateCallPath\_SpanishQueue node
   + Connect Case node Default path to UpdateCallPath\_EnglishQueue node
@@ -301,7 +301,7 @@
     - Rename: UpdateCallPath\_Queue
     - Description: Update the caller path variable
     - Select “STUxx\_CallPath” global variable in the Variable pull down
-    - Set value: `{% raw %}{{STUxx\_CallPath}}.ToQueue{% endraw %}`
+    - Set value: `{% raw %}{{STUxx_CallPath}}.ToQueue{% endraw %}`
 
 ![](assets/docx-image-3032.png)
 

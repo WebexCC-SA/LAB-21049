@@ -147,7 +147,7 @@
 
   + Click “+ Add new” under Variable settings to set another variable
     - Select “STUxx\_CallPath” variable from the pulldown
-    - Set value: {{STUxx_CallPath}}.english
+    - Set value: `{% raw %}{{STUxx_CallPath}}.english{% endraw %}`
       * Feel free to test with test expression icon![](assets/docx-image-2022.png) , entering STUxx\_Lab2\_IN from the SetInitialData node as the value for STUxx\_CallPath
 
 ![](assets/docx-image-2023.png)
@@ -158,7 +158,7 @@
     - Description: (Optional)
     - For variable “menu\_selection”
     - Set value: “Spanish”
-    - For variable STUxx_CallPath, set value: {{STUxx_CallPath}}.spanish
+    - For variable STUxx_CallPath, set value: `{% raw %}{{STUxx_CallPath}}.spanish{% endraw %}`
       * (Feel free to test with test expression icon)
     - Connect Main\_Menu option 2 path to new “SetVar\_Opt2” node
 

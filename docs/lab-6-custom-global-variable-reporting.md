@@ -52,7 +52,7 @@
 
 ![](assets/docx-image-6005.png)
 
-  + For the STUxx\_CallPath variable, set value: `{% raw %}{{STUxx\_CallPath}}.externaltransfer{% endraw %}`
+  + For the STUxx\_CallPath variable, set value: `{% raw %}{{STUxx_CallPath}}.externaltransfer{% endraw %}`
   + Click on “+Add new” for new variable to set
   + Select “TransferResult” global variable
   + Update the set value to: “TransferComplete”
@@ -77,7 +77,7 @@
 * Select the new Set Variable node
   + Activity label: SetVar\_TransferResult\_Fail
   + Variable settings à Variable: TransferResult
-  + Enter Set Value: `{% raw %}Failed: {{BridgedTransfer\_External.FailureDescription}} ({{BridgedTransfer\_External.FailureCode}}{% endraw %}`
+  + Enter Set Value: `{% raw %}Failed: {{BridgedTransfer_External.FailureDescription}} ({{BridgedTransfer_External.FailureCode}}{% endraw %}`
 
 ![](assets/docx-image-6009.png)
 
