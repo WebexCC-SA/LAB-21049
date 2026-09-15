@@ -203,7 +203,7 @@
     - Rename the node/change the Activity label: Increment\_NI\_NM\_Counter
     - Description: (Optional)
     - Select “ni\_nm\_counter” variable from the drop down menu
-    - Set value: {{ni_nm_counter+1}}
+    - Set value: `{% raw %}{{ni_nm_counter+1}}{% endraw %}`
     - Click on formula test icon in set value box (looks like </>)
     - Press “Test expression”. Should see Test Result of 1
     - Change the ni\_nm\_counter to 5
@@ -220,7 +220,7 @@
   + Click on the new Condition Node
     - Rename the node/change the Activity label: Check\_NI\_NM\_Counter
     - Description: (Optional)
-    - Set Condition Expression to value: {{ni_nm_counter>2}}
+    - Set Condition Expression to value: `{% raw %}{{ni_nm_counter>2}}{% endraw %}`
     - Click on formula test icon in set value box (looks like </>)
     - Press “test Expression”. Should see Test Result of “false”
     - Change the ni\_nm\_counter to 5
