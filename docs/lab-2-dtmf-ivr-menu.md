@@ -158,7 +158,7 @@
     - Description: (Optional)
     - For variable “menu\_selection”
     - Set value: “Spanish”
-    - For variable “STUxx\_CallPath”, set value: “{{STUxx\_CallPath}}.spanish”
+    - For variable 'STUxx_CallPath', set value: '{{STUxx_CallPath}}.spanish'
       * (Feel free to test with test expression icon)
     - Connect Main\_Menu option 2 path to new “SetVar\_Opt2” node
 
