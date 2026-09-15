@@ -175,8 +175,8 @@
     - Select “Cisco Cloud Text-to-Speech” from Connector pull down
     - Click “Add text-to-speech message” button twice
     - Click trashcan to delete audio file entry
-    - In the first text-to-speech message: “You picked {{menu\_selection}} path” (no quotes)
-    - In the second text-to-speech message: “This was option {{Main\_Menu.OptionEntered}}” (no quotes)
+    - In the first text-to-speech message: “You picked '{{menu_selection}}' path” (no quotes)
+    - In the second text-to-speech message: “This was option '{{Main_Menu.OptionEntered}}'” (no quotes)
   + Connect the exit of the PlayMessage node to the DisconnectContact Node
 
 ![](assets/docx-image-2026.png)
