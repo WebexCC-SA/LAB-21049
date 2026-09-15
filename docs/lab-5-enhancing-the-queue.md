@@ -16,11 +16,11 @@
 
 ## Lab Contents:
 
-* [5A – Business Hours](#_Walkthrough_Lab_5A)
-* [5B – PIQ and EWT](#_Walkthrough_Lab_5B)
-* [5C - Courtesy Call Back](#_Walkthrough_Lab_5C)
-* [5D - Whisper and Compliance Message](#_Walkthrough_Lab_5D)
-* [5E - Transcription/ScreenPop and Event flows](#_Walkthrough_Lab_5E)
+* [5A – Business Hours](#instructions-lab-5a-business-hours)
+* [5B – PIQ and EWT](#instructions-lab-5b-piq-and-ewt)
+* [5C - Courtesy Call Back](#instructions-lab-5c-courtesy-call-back-ccb)
+* [5D - Whisper and Compliance Message](#instructions-lab-5d-whisper-and-compliance-message)
+* [5E - Transcription/ScreenPop and Event flows](#instructions-lab-5e-transcriptionscreen-pop-and-event-flows)
 
 ## Instructions: Lab 5A – Business Hours
 

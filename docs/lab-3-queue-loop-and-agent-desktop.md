@@ -347,7 +347,7 @@
   + Click “Download default desktop layout”
   + Find the download and open the file in notepad or notepad++
     - Change the “appTitle” on row 4 from “Webex Contact Center” to “STUXX\_My Test Agent”
-    - Set the “logo” on row 5 to url: <https://storage.googleapis.com/gcp-wxcctoolkit-nprd-41927.appspot.com/assets/1HWbEUeZk1YqiTLqMlB93ABQcPN2/cisco-webex-meeting-logo-png_seeklogo-372182.png>
+    - Set the “logo” on row 5 to url: `{% raw %}https://storage.googleapis.com/gcp-wxcctoolkit-nprd-41927.appspot.com/assets/1HWbEUeZk1YqiTLqMlB93ABQcPN2/cisco-webex-meeting-logo-png_seeklogo-372182.png{% endraw %}`
     - Save notepad file with new name: STUxx\_Desktop.json
 
 ![](assets/docx-image-3038.png)
