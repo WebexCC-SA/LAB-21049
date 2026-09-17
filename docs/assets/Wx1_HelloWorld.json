@@ -1,0 +1,259 @@
+{
+  "bot_type": "virtualagent",
+  "configuration": {
+    "ai_engine": "PRO_2_0_0",
+    "default_language": "en-US",
+    "kb_ids": [
+      "6a67a5efdbf7f8034f44e4ce"
+    ],
+    "llm_agent_description": "Goal: You are demonstration agent to answer general Webex One (convention) questions and escalate to an agent if cannot answer.\n\nPersonality:  You are a spoiled teenager who wants to leave as fast as possible.\n\nContext:  \n{{callerANI}} is the callers phone number.  {{callerDNIS}} is the phone number that was called.\n\nInstructions and Actions\n\nBEFORE any requests, add the caller to the directory if caller doesn not exist yet. Caller must be validated in the directory before proceeding.  Ask for caller phone number if {{callerANI}} doe not exist. \nIf caller is found, greet the caller by their first name and continue.\n\nTransfers: All transfer to agents use the [transfer\\_with\\_context] action.\n\n*   If caller speaking non-english, transfer to agent.",
+    "llm_model": "1.0.0",
+    "logo": "https://studio.aiagent-us1.cisco.com/static/assets/img/bot-logo/default-virtualagent.svg",
+    "timezone": "America/Chicago",
+    "transparency_configuration": {
+      "enabled": true,
+      "message": "Hi, I’m Megan the AI assistant. This interaction may be recorded and transcribed for troubleshooting purposes."
+    },
+    "voice_settings": {
+      "advance_settings": {
+        "global": {
+          "delays_and_interruptions": {
+            "caller_turn_timeout": 1500,
+            "custom_no_input": 10,
+            "customer_interruption": true,
+            "eos_sensitivity": 500,
+            "fulfilment_timeout": 30,
+            "optimized_barge_in": true,
+            "slots_additional_delay": 800
+          },
+          "dtmf_settings": {
+            "max_length": 16,
+            "term_char": "#",
+            "timeout_between_digits": 5,
+            "turn_on_dtmf": true
+          },
+          "is_customized": true,
+          "response_settings": {
+            "acknowledgement_frequency": "APPROPRIATE",
+            "acknowledgement_length": "SHORT",
+            "acknowledgement_style": "BRIEF",
+            "custom_prompt": "",
+            "custom_vocabulary": [],
+            "include_disfluencies": true,
+            "response_style": "ACTIVE"
+          }
+        }
+      },
+      "voices": [
+        {
+          "displayName": "en-US-Maria",
+          "gender": "FEMALE",
+          "language": "English",
+          "locale": "en-US",
+          "speaking_rate": 1.1
+        }
+      ]
+    },
+    "welcome_message": "Welcome to Webex One 2026.  I need to confirm you are in the database before I can answer anything.  Is that ok?"
+  },
+  "tools": [
+    {
+      "capability": "slot_filling",
+      "description": "Escalate the conversation to a human agent if the user asks for it.",
+      "enabled": true,
+      "fulfillment": {},
+      "id": "3a01c0850aba62c71426a089e71c80c8",
+      "name": "Agent handover",
+      "slots": [],
+      "slots_view": "table",
+      "system_tool": true
+    },
+    {
+      "action_type": "fulfilment",
+      "bot_id": 77928,
+      "capability": "slot_filling_with_fulfillment",
+      "description": "This looks up the caller's first and last name with their phone number or {{callerANI}} to see if they are in the directory.",
+      "enabled": true,
+      "fulfillment": {
+        "authentication": {
+          "service_key": "",
+          "type": "ci_bearer_token"
+        },
+        "flow_builder": "connect",
+        "flow_id": "93931",
+        "flow_name": "directory_lookup",
+        "output_entities": {
+          "parameters": {
+            "properties": {},
+            "required": [],
+            "secure": [],
+            "type": "object"
+          }
+        },
+        "output_entities_format": "table",
+        "output_entities_text": "",
+        "output_entities_view": "table",
+        "service_id": "63559",
+        "service_name": "Wx1 2026",
+        "type": "flow",
+        "webhook_url": "https://hooks.us.webexconnect.io/flows/93931/trigger/aiagent"
+      },
+      "id": "fc458f8a5b9ded973c7f50820c9e9b54",
+      "input_entities": {
+        "parameters": {
+          "properties": {
+            "phoneNumber": {
+              "description": "A valid phone number with country code. Country code is optional.",
+              "examples": [],
+              "pattern": "^\\d+$",
+              "type": "phone"
+            }
+          },
+          "required": [
+            "phoneNumber"
+          ],
+          "secure": [],
+          "type": "object"
+        }
+      },
+      "name": "caller_lookup",
+      "slots_view": "table",
+      "system_tool": false
+    },
+    {
+      "action_type": "fulfilment",
+      "bot_id": 77928,
+      "capability": "slot_filling_with_fulfillment",
+      "description": "This is to add a new caller to the directory if not found or does not already exist.",
+      "enabled": true,
+      "fulfillment": {
+        "authentication": {
+          "service_key": "",
+          "type": "ci_bearer_token"
+        },
+        "flow_builder": "connect",
+        "flow_id": "93930",
+        "flow_name": "directory_add",
+        "output_entities": {
+          "parameters": {
+            "properties": {},
+            "required": [],
+            "secure": [],
+            "type": "object"
+          }
+        },
+        "output_entities_format": "table",
+        "output_entities_text": "",
+        "output_entities_view": "table",
+        "service_id": "63559",
+        "service_name": "Wx1 2026",
+        "type": "flow",
+        "webhook_url": "https://hooks.us.webexconnect.io/flows/93930/trigger/aiagent"
+      },
+      "id": "22028280ea38f485b2fe46b2c90e80ec",
+      "input_entities": {
+        "parameters": {
+          "properties": {
+            "firstName": {
+              "description": "First name of caller.  Ask to spell if multiple interpretations or spellings are possible.  Example, \"John\" vs \"Jon\" or \"Joe\" vs \"Jo\".  First letter should be capitalized, remaining letters lower case.",
+              "examples": [],
+              "type": "string"
+            },
+            "lastName": {
+              "description": "Last name of caller.  Ask to spell to ensure it is spelled correctly in the directory. First letter should be capitalized, remaining letters lower case.",
+              "examples": [],
+              "type": "string"
+            },
+            "phoneNumber": {
+              "description": "A valid phone number with country code.  No special symbols or characters, just the digits.  This can include international country codes as well.  If no country code is give and phone number is 10 digites, add a \"1\" to front for US as default.",
+              "examples": [],
+              "pattern": "^\\d+$",
+              "type": "phone"
+            }
+          },
+          "required": [
+            "firstName",
+            "lastName",
+            "phoneNumber"
+          ],
+          "secure": [],
+          "type": "object"
+        }
+      },
+      "name": "add_caller",
+      "slots_view": "table",
+      "system_tool": false
+    },
+    {
+      "action_type": "transfer",
+      "bot_id": 77928,
+      "capability": "custom_transfer",
+      "description": "Use this to transfer the caller to an agent with additional context data gathered.",
+      "enabled": true,
+      "exit_details": {
+        "announce_transfer": true,
+        "type": "custom_transfer"
+      },
+      "fulfillment": {
+        "authentication": {
+          "service_key": "",
+          "type": "ci_bearer_token"
+        },
+        "exit_details": {
+          "announce_transfer": true,
+          "type": "custom_transfer"
+        },
+        "output_entities": {
+          "parameters": {
+            "properties": {},
+            "required": [],
+            "secure": [],
+            "type": "object"
+          }
+        },
+        "output_entities_format": "table",
+        "output_entities_text": "",
+        "output_entities_view": "table"
+      },
+      "id": "04e5204e9c269b7f70c80c06cc8f5031",
+      "input_entities": {
+        "parameters": {
+          "properties": {
+            "firstName": {
+              "description": "First name of caller",
+              "examples": [],
+              "type": "string"
+            },
+            "language": {
+              "description": "One of the listed values.  Language the caller is speaker.  Default to english.",
+              "enum": [
+                "english",
+                "spanish",
+                "italian",
+                "german",
+                "other"
+              ],
+              "examples": [],
+              "type": "custom_list"
+            },
+            "lastName": {
+              "description": "Last name of caller.",
+              "examples": [],
+              "type": "string"
+            }
+          },
+          "required": [
+            "firstName",
+            "lastName"
+          ],
+          "secure": [],
+          "type": "object"
+        }
+      },
+      "name": "transfer_with_context",
+      "skip_greetings_match_voice": true,
+      "slots_view": "table",
+      "system_tool": false
+    }
+  ]
+}
