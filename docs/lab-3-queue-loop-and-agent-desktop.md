@@ -16,6 +16,7 @@
 ## Prerequisites:
 
 * Complete Lab 2
+* Download the required files for lab 3 and 4: [Agent Desktop and AI Agent Configs Files](./assets/download/Wx1_Lab-21049_Files.zip)
 
 ## Lab Contents:
 
