@@ -1,0 +1,1148 @@
+<!DOCTYPE html><html lang="en" class="no-js"><head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="LAB-21049: Hands-On Migrating CCE to WxCC">
+      
+      
+        <meta name="author" content="Joe Wong">
+      
+      
+      
+        <link rel="prev" href="../lab-3-queue-loop-and-agent-desktop/">
+      
+      
+        <link rel="next" href="../lab-5-enhancing-the-queue/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../template_assets/webex75.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>Lab 4 - LAB-21049: Hands-On Migrating CCE to WxCC</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  <link href="../assets/stylesheets/glightbox.min.css" rel="stylesheet"><script src="../assets/javascripts/glightbox.min.js"></script><style id="glightbox-style">
+            html.glightbox-open { overflow: initial; height: 100%; }
+            .gslide-title { margin-top: 0px; user-select: text; }
+            .gslide-desc { color: #666; user-select: text; }
+            .gslide-image img { background: white; }
+            .gscrollbar-fixer { padding-right: 15px; }
+            .gdesc-inner { font-size: 0.75rem; }
+            body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color); }
+            body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color); }
+            body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color); }
+        </style></head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#lab-4-speech-iva" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="LAB-21049: Hands-On Migrating CCE to WxCC" class="md-header__button md-logo" aria-label="LAB-21049: Hands-On Migrating CCE to WxCC" data-md-component="logo">
+      
+  <img src="../template_assets/webexLogo91.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"></path></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            LAB-21049: Hands-On Migrating CCE to WxCC
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Lab 4
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="indigo" aria-label="Switch to dark mode" type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden="">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"></path></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="custom" data-md-color-accent="indigo" aria-label="Switch to light mode" type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden="">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"></path></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required="">
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"></path></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></path></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix="">
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href=".." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../lab-0/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  CCE Base and Lab Overview (Lab 0)
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../lab-1-basic-ingress/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Lab 1
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../lab-2-dtmf-ivr-menu/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Lab 2
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../lab-3-queue-loop-and-agent-desktop/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Lab 3
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    <li class="md-tabs__item md-tabs__item--active">
+      <a href="./" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Lab 4
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../lab-5-enhancing-the-queue/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Lab 5
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../lab-6-custom-global-variable-reporting/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Lab 6
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../lab-7-sms-to-queue-bonus/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Lab 7
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../architecture/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  WxCC Architecture
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="LAB-21049: Hands-On Migrating CCE to WxCC" class="md-nav__button md-logo" aria-label="LAB-21049: Hands-On Migrating CCE to WxCC" data-md-component="logo">
+      
+  <img src="../template_assets/webexLogo91.png" alt="logo">
+
+    </a>
+    LAB-21049: Hands-On Migrating CCE to WxCC
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix="">
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lab-0/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CCE Base and Lab Overview (Lab 0)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lab-1-basic-ingress/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lab 1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lab-2-dtmf-ivr-menu/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lab 2
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lab-3-queue-loop-and-agent-desktop/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lab 3
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lab 4
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lab 4
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+      
+        <li class="md-nav__item">
+  <a href="#objectives" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Objectives:
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#prerequisites" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Prerequisites
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#instructions-lab-4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Instructions: Lab 4
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#finish-lab-4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Finish Lab 4
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lab-5-enhancing-the-queue/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lab 5
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lab-6-custom-global-variable-reporting/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lab 6
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lab-7-sms-to-queue-bonus/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lab 7
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../architecture/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    WxCC Architecture
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="lab-4-speech-iva">Lab 4 – Speech IVA</h1>
+<h2 id="objectives">Objectives:</h2>
+<ul>
+<li>Add a speech IVA using Webex AI Agent to a flow.</li>
+<li>Import and modify and existing Webex AI Agent</li>
+<li>Experience a simple generative AI autonomous agent</li>
+<li>Configure a flow diversion node to redirect calls between different paths.</li>
+<li>Update flow variables and global variables for new options.</li>
+<li>Learn how to pass context data in and retrieve context data out of an AI Agent</li>
+</ul>
+<h2 id="prerequisites">Prerequisites</h2>
+<ul>
+<li>Lab 3</li>
+<li>Instructors turn on AI Features prior to this lab starting.</li>
+<li>Generated Summaries and Real-time transcription</li>
+</ul>
+<h2 id="instructions-lab-4">Instructions: Lab 4</h2>
+<ul>
+<li>Within Collaboration Control Hub à Contact Center 🡪 Overview page</li>
+<li>On the right side under Quick Links, click on Webex AI Agent</li>
+</ul>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../assets/docx-image-4001.png" data-desc-position="top"><img alt="" src="../assets/docx-image-4001.png"></a></p>
+<ul>
+<li>Click on “Import agent”</li>
+<li>Import the “Wx1_HelloWorld” AI agent json file provided</li>
+<li>Click on Import Agent</li>
+<li>Click on the Upload button and select the “Wx1_HelloWorld” AI Agent json file provided</li>
+<li>Agent Name: STUxx_HelloWorld</li>
+<li>System ID: Leave to whatever system generated</li>
+<li>Click Import</li>
+</ul>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../assets/docx-image-4002.png" data-desc-position="top"><img alt="" src="../assets/docx-image-4002.png"></a></p>
+<ul>
+<li>Review AI Agent “Profile”, “Instructions”, “Knowledge”, “Actions”, and “Conversation” Tabs</li>
+<li>Click on the Knowledge Tab<ul>
+<li>Select “Wx1_2026_KB” from the drop-down box</li>
+<li>Click “Save Changes”</li>
+</ul>
+</li>
+</ul>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../assets/docx-image-4003.png" data-desc-position="top"><img alt="" src="../assets/docx-image-4003.png"></a></p>
+<ul>
+<li>Click “Manage” then “Agree” and review the included types of knowledge base files. When finished, click the <a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../assets/docx-image-4004.png" data-desc-position="top"><img alt="" src="../assets/docx-image-4004.png"></a> to return to the AI Agent Knowledge tab.</li>
+</ul>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../assets/docx-image-4005.png" data-desc-position="top"><img alt="" src="../assets/docx-image-4005.png"></a></p>
+<ul>
+<li>Click Publish<ul>
+<li>Comment: “First AI Agent”</li>
+</ul>
+</li>
+<li>Click Publish</li>
+</ul>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../assets/docx-image-4006.png" data-desc-position="top"><img alt="" src="../assets/docx-image-4006.png"></a></p>
+<ul>
+<li>Within Collaboration Control Hub à Contact Center</li>
+<li>Click on Flows from the navigation panel</li>
+<li>Create a copy of your “STUxx_Lab2” flow</li>
+<li>Open the newly created copy “Copy_STUxx_Lab2_......”</li>
+<li>Go into Edit Mode and rename the flow to “STUxx_Lab4”, then click Save</li>
+</ul>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../assets/docx-image-4007.png" data-desc-position="top"><img alt="" src="../assets/docx-image-4007.png"></a></p>
+<ul>
+<li>Select the WelcomeMessage node and change the text-to-speech message to say “This is my flow for lab 4”</li>
+<li>Disconnect the “WelcomeMessage” node exit path from the Main_Menu node</li>
+</ul>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../assets/docx-image-4008.png" data-desc-position="top"><img alt="" src="../assets/docx-image-4008.png"></a></p>
+<ul>
+<li>Drag “Percent Allocation” node between the “WelcomeMessage” node and “Main_Menu” node</li>
+<li>Connect the welcome message node to the new Percent Allocation node</li>
+</ul>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../assets/docx-image-4009.png" data-desc-position="top"><img alt="" src="../assets/docx-image-4009.png"></a></p>
+<ul>
+<li>Select the new Percent Allocation node and configure as follows:</li>
+<li>Activity Label: “IVR_Divert”</li>
+<li>Activity description: Allocate calls between DTMF and AI agent IVR</li>
+<li>Rename “Allocation Default” to “DTMF IVR”</li>
+<li>Click “+ Add new” button</li>
+<li>Rename “New Allocation” to “AI Agent”</li>
+<li>Set Percent for IVR to 0 and AI Agent to 100</li>
+<li>Select enable decryption</li>
+</ul>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../assets/docx-image-4010.png" data-desc-position="top"><img alt="" src="../assets/docx-image-4010.png"></a></p>
+<ul>
+<li>Copy SetVar_Opt2 node and paste it below the IVR_Divert and Main_Menu nodes</li>
+<li>Connect IVR_Divert node’s “DTMF IVR” path to MainMenu node</li>
+<li>Connect IVR_Divert node’s “AI agent” path to newly-created SetVar node.</li>
+<li>Select new SetVar Node</li>
+<li>Activity Label: SetVar_Opt3<ul>
+<li>Note: We will move this to the main menu later</li>
+</ul>
+</li>
+<li>Replace menu_selection Set Value with : “A.I. Agent”</li>
+<li>Replace STUxx_CallPath Set Value with: <code>{{STUxx_CallPath}}.aiAgent</code></li>
+</ul>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../assets/docx-image-4011.png" data-desc-position="top"><img alt="" src="../assets/docx-image-4011.png"></a></p>
+<ul>
+<li>Drag a new Virtual Agent V2 node to canvas</li>
+<li>Connect exit of SetVar_Opt3 to new Virtual Agent V2 node</li>
+<li>Select Virtual Agent V2 node</li>
+<li>Activity label: AI_Agent</li>
+<li>Select “Static Contact Center AI Config”</li>
+<li>Contact Center AI Config : “Webex AI Agent (Autonomous)” from the Contact Center AI Config pulldown</li>
+<li>Virtual agent: Select your recently created virtual agent “STUxx_HelloWorld” from the Virtual agent pulldown</li>
+<li>Expand “State Event”</li>
+<li>Paste this into the Event data: <code>{'dnis': '{{NewPhoneContact.DNIS}}', 'callerANI':'{{NewPhoneContact.ANI}}'}</code></li>
+<li>Scroll to the bottom to Enable decryption</li>
+</ul>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../assets/docx-image-4012.png" data-desc-position="top"><img alt="" src="../assets/docx-image-4012.png"></a></p>
+<ul>
+<li>Copy/paste the UpdateCallPath_Queue node</li>
+<li>Activity label: UpdateCallPath_Contained</li>
+<li>Replace set value to: <code>{{STUxx_CallPath}}.Contained</code></li>
+<li>Connect the AI_Agent node’s “Handled” path to UpdateCallPath_Contained</li>
+<li>Connect UpdateCallPath_Contained exit to DisconnectContact node</li>
+</ul>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../assets/docx-image-4013.png" data-desc-position="top"><img alt="" src="../assets/docx-image-4013.png"></a></p>
+<ul>
+<li>Global Flow Properties 🡪 Configuration 🡪 Flow variables</li>
+</ul>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../assets/docx-image-4014.png" data-desc-position="top"><img alt="" src="../assets/docx-image-4014.png"></a></p>
+<ul>
+<li>Click ““+ Create flow variable”</li>
+<li>Add context flow variables for AI agent escalation</li>
+<li>Create 3 variables of Type: String that are agent viewable:<ul>
+<li>callerFirstName with agent viewable label First Name</li>
+<li>callerLastName with agent viewable label Last Name and click “Agent editable”</li>
+<li>callerLanguage with agent viewable label Language</li>
+</ul>
+</li>
+<li>Create 1 string variable that is not agent viewable:<ul>
+<li>aiAgentResponse</li>
+</ul>
+</li>
+</ul>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../assets/docx-image-4015.png" data-desc-position="top"><img alt="" src="../assets/docx-image-4015.png"></a></p>
+<ul>
+<li>Drag a Set Variable node to canvas below the “UpdateCallPath_Contained” node</li>
+<li>Select the new Set Variable node</li>
+<li>Activity label: SeeMetaData</li>
+<li>Variable: aiAgentResponse</li>
+<li>Variable value: <code>{{AI_Agent.MetaData}}</code></li>
+<li>Connect “Escalated” path of the AI_Agent Virtual Agent node to the SeeMetaData Set Variable node</li>
+</ul>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../assets/docx-image-4016.png" data-desc-position="top"><img alt="" src="../assets/docx-image-4016.png"></a></p>
+<ul>
+<li>Drag a Parse node to the canvas after the SeeMetaData node</li>
+<li>Select the new Parse node</li>
+<li>Activity label: Extract_AI_Agent_Data</li>
+<li>Input variable: AI_Agent.MetaData</li>
+<li>Content type: JSON</li>
+<li>Click on “+ Add Parsed variable”</li>
+<li>Select “callerFirstName” variable for first Output variable</li>
+<li>Path Expression: $.actions.transfer_with_context[0].input.firstName</li>
+<li>Click on “+ Add new” button to add another variable to parse</li>
+<li>Select “callerLastName” variable for first Output variable</li>
+<li>Path Expression: $.actions.transfer_with_context[0].input.lastName</li>
+<li>Click on “+ Add new” button to add another variable to parse</li>
+<li>Select “callerlanguage” variable for first Output variable</li>
+<li>Path Expression: $.actions.transfer_with_context[0].input.language</li>
+<li>Connect the SeeMetaData exit path to the new Extract_AI_Agent parse node</li>
+<li>Connect the new Extract_AI_Agent parse node to the UpdateCallPath_Queue node (before GoTo_Queue node)</li>
+</ul>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../assets/docx-image-4017.png" data-desc-position="top"><img alt="" src="../assets/docx-image-4017.png"></a></p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../assets/docx-image-4018.png" data-desc-position="top"><img alt="" src="../assets/docx-image-4018.png"></a></p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../assets/docx-image-4019.png" data-desc-position="top"><img alt="" src="../assets/docx-image-4019.png"></a></p>
+<ul>
+<li>Click on Validation</li>
+<li>Publish as Latest</li>
+</ul>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../assets/docx-image-4020.png" data-desc-position="top"><img alt="" src="../assets/docx-image-4020.png"></a></p>
+<ul>
+<li>Within Collaboration Control Hub à Contact Center</li>
+<li>Click on “Flows” from left navigation panel</li>
+<li>Open the “STUxx_Queue_Flow_Lab3” queue flow from Lab3 and Edit</li>
+<li>Add flow variables for AI agent escalation</li>
+<li>Create 3 string variables that are agent viewable:<ul>
+<li>callerFirstName with agent viewable label First Name</li>
+<li>callerLastName with agent viewable label Last Name and click Agent editable</li>
+<li>callerLanguage with agent viewable label Language</li>
+</ul>
+</li>
+<li>Click on Validation</li>
+<li>Publish as Latest</li>
+</ul>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../assets/docx-image-4021.png" data-desc-position="top"><img alt="" src="../assets/docx-image-4021.png"></a></p>
+<ul>
+<li>Return to your “STUxx_Lab4” AI agent flow</li>
+<li>Refresh the canvas flow (webpage refresh)</li>
+<li>Edit flow again</li>
+<li>Select Goto_Queue node</li>
+<li>Flow variable mapping : Click “+ Add new” button</li>
+<li>Select “callerFirstName” under “Map current variable” pulldown<ul>
+<li>Notice the destination is populated as the name are the same</li>
+</ul>
+</li>
+<li>Add 2 more for “callerLastName” and “callerLanguage”</li>
+<li>Click Validation</li>
+<li>If Validation fails but you are certain you have the mappings set correctly, refresh the browser and enable Validation again.</li>
+<li>Publish flow as latest</li>
+</ul>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../assets/docx-image-4022.png" data-desc-position="top"><img alt="" src="../assets/docx-image-4022.png"></a></p>
+<ul>
+<li>In Control Hub 🡪 Channels rename your Entry point from STUxx_Lab2_EP to STUxx_Lab4_EP</li>
+<li>Change your “Routing Flow” dropdown from “STUxx_Lab2” to “STUxx_Lab4”</li>
+<li>Set the Music on Hold to defaultmusic_on_hold.wav</li>
+<li>Click Save</li>
+<li>Test</li>
+<li>Use an incognito browser to log in to agent desktop and set yourself as Available</li>
+<li>Call the flow. When Megan the AI Agent answers, allow it to add your caller record</li>
+<li>Ask it any question around Webex one, Webex Contact Center Architecture, Fun things to do in Austin in October, or Collaboration Devices</li>
+<li>Hang up, call the flow back</li>
+<li>Observe the lookup successfully identify you this time</li>
+<li>Say “habla Espanol?” to the AI agent.</li>
+<li>The AI Agent will transfer the call to queue for Spanish support. But since your agent is only skilled for English proficiency, they will not receive the call.</li>
+<li>End the call</li>
+</ul>
+<h2 id="finish-lab-4">Finish Lab 4</h2>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden="">
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"></path></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer">
+        
+          
+          <a href="../lab-3-queue-loop-and-agent-desktop/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Lab 3">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"></path></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                Lab 3
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../lab-5-enhancing-the-queue/" class="md-footer__link md-footer__link--next" aria-label="Next: Lab 5">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                Lab 5
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"></path></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright © 2025 Cisco
+    </div>
+  
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.indexes", "navigation.instant", "navigation.top", "navigation.footer", "search.suggest", "content.code.copy", "toc.integrate"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+        <script src="../template_assets/js/newLoad.js"></script>
+      
+        <script src="../template_assets/js/setInfo.js"></script>
+      
+    
+  
+<script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": false, "openEffect": "fade", "closeEffect": "fade", "slideEffect": "slide"});
+document$.subscribe(()=>{ lightbox.reload(); });
+</script></body></html>
