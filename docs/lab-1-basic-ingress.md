@@ -21,11 +21,11 @@
 
 ![](assets/docx-image-1001.png)
 
-  + Create a new flow from template à Manage Flows à Create Flows
+  + Create a new flow from template a Manage Flows a Create Flows
 
 ![](assets/docx-image-1002.png)
 
-  + Within Webex Flow Designer à Select “Use a template”
+  + Within Webex Flow Designer a Select “Use a template”
   + Click Next
 
 ![](assets/docx-image-1003.png)
@@ -48,11 +48,11 @@
 
 ![](assets/docx-image-1005.png)
 
-  + Under the “General Settings” Section of the Global flow properties à update the Flow description to “My 1st Webex Contact Center Flow”
+  + Under the “General Settings” Section of the Global flow properties a update the Flow description to “My 1st Webex Contact Center Flow”
 
 ![](assets/docx-image-1006.png)
 
-  + Under the “Decryption Settings” Section of the Global flow properties à Click “enable decryption”,
+  + Under the “Decryption Settings” Section of the Global flow properties a Click “enable decryption”,
 
 ![](assets/docx-image-1007.png)
 
