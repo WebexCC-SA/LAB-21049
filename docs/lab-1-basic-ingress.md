@@ -91,7 +91,7 @@
 
 ![](assets/docx-image-1012.png)
 
-  + - In the Choose a voice to test the prompt dialog box select “en-US-Maria” or “en-US-Daniel”. There are several other voice options. Feel free to listen to them in other languages as time permits.
+    - In the Choose a voice to test the prompt dialog box select “en-US-Maria” or “en-US-Daniel”. There are several other voice options. Feel free to listen to them in other languages as time permits.
 
 ![](assets/docx-image-1013.png)
 
@@ -108,10 +108,10 @@
 
 ![](assets/docx-image-1016.png)
 
-* Build Entry Point
-  + Navigate back to Control Hub Contact Center, which should still be opened in another browser tab
-  + From the Left Menu --> Under the Customer Experience Section --> Click on “Channels” ![](assets/docx-image-1017.png)
-  + Click on “Create a channel”
++ Build Entry Point
+  - Navigate back to Control Hub Contact Center, which should still be opened in another browser tab
+  - From the Left Menu --> Under the Customer Experience Section --> Click on “Channels” ![](assets/docx-image-1017.png)
+  - Click on “Create a channel”
 
 ![](assets/docx-image-1018.png)
 
