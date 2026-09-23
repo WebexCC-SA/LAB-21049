@@ -73,6 +73,7 @@
 ![](assets/docx-image-1009.png)
 
   Note: WxCC currently does not have line connectors or comment boxes. You can add Notes in the “Activity description” for any given Node.
+  
   + Modify the Welcome Message Text-To-Speech (TTS)
     - Scroll down to the “Text-to-speech message” free-form text box
     - Replace the existing “Hello World” message with “You have successfully installed the Cisco Unified V X M L server.”
