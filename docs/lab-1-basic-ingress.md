@@ -114,6 +114,7 @@
 
 ![](assets/docx-image-1018.png)
 
+  + Update the configuration:
     - Name: STUxx\_Lab1\_EP
     - Channel Type: Inbound Telephony
     - Service level threshold: 120
