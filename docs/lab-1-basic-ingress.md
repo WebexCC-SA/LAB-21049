@@ -36,7 +36,7 @@
 
 **Note:** If you click on “Preview”; the Flow Design opens a pop up with the following details:
 
-  + - A Visual Representation of the Main Flow and all Event Flows
+  + A Visual Representation of the Main Flow and all Event Flows
     - Description of the flow
     - Flow Details
     - Any Pre-requisites
@@ -99,7 +99,7 @@
 
 ![](assets/docx-image-1014.png)
 
-  + Publish the Flow. Use “latest” version label
+  + Publish the Flow. Use “Latest” version label
     - “Latest” version label is checked by default
     - Click “Publish Flow”
 
@@ -109,12 +109,12 @@
 
 * Build Entry Point
   + Navigate back to Control Hub Contact Center, which should still be opened in another browser tab
-  + From the Left Menu --> Under the Customer Experience Section --> Click on “Channels” ![](assets/docx-image-017.png)
+  + From the Left Menu --> Under the Customer Experience Section --> Click on “Channels” ![](assets/docx-image-1017.png)
   + Click on “Create a channel”
 
 ![](assets/docx-image-1018.png)
 
-  + - Name: STUxx\_Lab1\_EP
+    - Name: STUxx\_Lab1\_EP
     - Channel Type: Inbound Telephony
     - Service level threshold: 120
     - Timezone: America/Chicago
@@ -124,7 +124,7 @@
     - Phone numbers: Click “add”
       * Webex Calling Location: Site1
       * PSTN number: Select an available phone number from the drop-down list
-      * Actions: click the ![](assets/docx-image-019.png)
+      * Actions: click the ![](assets/docx-image-1019.png)
     - Click “Create”
 
 ![](assets/docx-image-1020.png)
