@@ -53,13 +53,13 @@
 
 ![](assets/docx-image-2007.png)
 
-    - Name: menu\_selection
-    - Description: Track the option selected from the menu.
-    - Variable type: String
-    - Default value: (leave blank)
-    - Enable “Agent Viewable”
-    - Desktop label: “Caller Intent”
-    - Click Create
+  + Name: menu\_selection
+  - Description: Track the option selected from the menu.
+  - Variable type: String
+  - Default value: (leave blank)
+  - Enable “Agent Viewable”
+  - Desktop label: “Caller Intent”
+  - Click Create
 
 ![](assets/docx-image-2008.png)
 
