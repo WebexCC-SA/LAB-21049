@@ -25,19 +25,19 @@
 
 ## Instructions: Lab 3A – Queue Loop
 
-* Within Collaboration Control Hub à Contact Center à “User Management”
+* Within Collaboration Control Hub -> Contact Center -> “User Management”
 * Click on Teams
 * Build 2 Teams
   + Click “Create a Team”
-  + Name: “STUxx\_Team1”
-  + Parent Site: Site-1
-  + Team Type: Agent Based
-  + Skill profile: English Group
-  + Multimedia profile: Default Multimedia Profile
-  + Desktop layout: Global Layout
-  + Leave Agents blank
-  + Click “Create”
-  + Click “Done”
+    - Name: “STUxx\_Team1”
+    - Parent Site: Site-1
+    - Team Type: Agent Based
+    - Skill profile: English Group
+    - Multimedia profile: Default Multimedia Profile
+    - Desktop layout: Global Layout
+    - Leave Agents blank
+    - Click “Create”
+    - Click “Done”
 
 ![](assets/docx-image-3001.png)
 
@@ -49,7 +49,7 @@
 
 ![](assets/docx-image-3002.png)
 
-* Within Collaboration Control Hub à Contact Center à “User Management” select “Skill Management”
+* Within Collaboration Control Hub -> Contact Center -> “User Management” select “Skill Management”
 * Build 2 Skills
   + Click “Create a Skill”
   + Create a skill
@@ -70,7 +70,7 @@
 
 ![](assets/docx-image-3004.png)
 
-* Within Collaboration Control Hub à Contact Center à “User Management” select “Skill Profiles”
+* Within Collaboration Control Hub -> Contact Center -> “User Management” select “Skill Profiles”
   + Click “Create a skill profile”
     - General: STUxx\_English
     - Select STUxx\_English and value 10
@@ -88,7 +88,7 @@
 ![](assets/docx-image-3007.png)
 
   + Enable User Contact Center Functions
-    - Within Collaboration Control Hub à Contact Center à “Contact Center User” select “STUxx\_Agent ”
+    - Within Collaboration Control Hub -> Contact Center -> “Contact Center User” select “STUxx\_Agent ”
     - Agent
       * Enable the “Contact Center” slider
       * Set Site to Site-1
@@ -100,22 +100,22 @@
 
 ![](assets/docx-image-3008.png)
 
-  + - Supervisor
-      * Contact Center -> Contact Center User->Enable contact center user
-      * Select supervisor user
-      * Enable the “Contact Center” slider
-      * Primary Team: “STUxx\_Team1”
-      * Site: Site-1
-      * Teams: STUxx\_Team2
-      * Desktop Profile: Agent-Profile
-      * Multimedia Profile: Default\_Multimedia\_Profile
-      * Skill Profile: STUxx\_English\_Spanish
-      * Save
+  + Supervisor
+    - Contact Center -> Contact Center User->Enable contact center user
+    - Select supervisor user
+    - Enable the “Contact Center” slider
+    - Primary Team: “STUxx\_Team1”
+    - Site: Site-1
+    - Teams: STUxx\_Team2
+    - Desktop Profile: Agent-Profile
+    - Multimedia Profile: Default\_Multimedia\_Profile
+    - Skill Profile: STUxx\_English\_Spanish
+    - Save
 
 ![](assets/docx-image-3009.png)
 
 * Build 2 Queues
-  + Within Collaboration Control Hub à Contact Center à “Customer Experience select “Queues”
+  + Within Collaboration Control Hub -> Contact Center -> “Customer Experience select “Queues”
   + Click “Create a queue”
     - Name the queue: STUxx\_TeamQueue
     - Description: CCE Skill-based routing equivalent
@@ -126,29 +126,29 @@
 
 ![](assets/docx-image-3010.png)
 
-  + - Call Distribution: Click Create a group
-      * Select your STUxx\_Team1
-      * Save
+  + Call Distribution: Click Create a group
+    - Select your STUxx\_Team1
+    - Save
 
 ![](assets/docx-image-3011.png)
 
-  + - Create Group (Again) in Call Distribution
-      * Priority: 2 from drop down
-      * Add Group after: 10 seconds
-      * Select your STUxx\_Team2
-      * Save
+  + Create Group (Again) in Call Distribution
+    - Priority: 2 from drop down
+    - Add Group after: 10 seconds
+    - Select your STUxx\_Team2
+    - Save
 
 ![](assets/docx-image-3012.png)
 
-  + - Advanced Settings
-      * Select “Service Monitoring”
-      * Select “Allow pause/resume for calls”
-      * Leave recording pause duration at 10 seconds
-      * Service Level Threshold: 30
-      * Maximum time in queue: 7200 (2 hours)
-      * Default music in queue: defaultmusic\_on\_hold.wav
-      * Click “Create”
-      * Click “Done”
+  + Advanced Settings
+    - Select “Service Monitoring”
+    - Select “Allow pause/resume for calls”
+    - Leave recording pause duration at 10 seconds
+    - Service Level Threshold: 30
+    - Maximum time in queue: 7200 (2 hours)
+    - Default music in queue: defaultmusic\_on\_hold.wav
+    - Click “Create”
+    - Click “Done”
 
 ![](assets/docx-image-3013.png)
 
@@ -172,30 +172,30 @@
 
 ![](assets/docx-image-3015.png)
 
-  + - Click “Refresh the List” and you will see only your Agent in the Eligible User List.
+  + Click “Refresh the List” and you will see only your Agent in the Eligible User List.
 
 ![](assets/docx-image-3016.png)
 
-  + - Press “clear all”
-    - Skill Type: Proficiency
-    - Skill Name: STUxx\_English
-    - Condition: >=
-    - Skill Value: 5
-    - Click Add skill requirement
-    - Click “Refresh the List” and you will see both your Agent and Supervisor
-    - Save
+  + Press “clear all”
+  - Skill Type: Proficiency
+  - Skill Name: STUxx\_English
+  - Condition: >=
+  - Skill Value: 5
+  - Click Add skill requirement
+  - Click “Refresh the List” and you will see both your Agent and Supervisor
+  - Save
 
 ![](assets/docx-image-3017.png)
 
-  + - Keep all Advanced Settings the same
-    - Click “Create”
-    - Click “Done”
+  + Keep all Advanced Settings the same
+  - Click “Create”
+  - Click “Done”
 
 ![](assets/docx-image-3018.png)
 
 * Build the Queue loop Flow
-  + - Within Collaboration Control Hub à Contact Center à Customer Experience à Select Flows ”
-  + Click “Manage Flows” à Create flows
+  + Within Collaboration Control Hub -> Contact Center -> Customer Experience -> Select Flows ”
+  + Click “Manage Flows” -> Create flows
   + Use Template: “Simple Inbound Call to Queue”
   + Name the flow: STUxx\_Queue\_Flow\_Lab3
   + Click “Create Flow”
@@ -207,7 +207,7 @@
 
 ![](assets/docx-image-3020.png)
 
-  + Create flow Variables: Under the “Variable definition” section à Configuration
+  + Create flow Variables: Under the “Variable definition” section -> Configuration
     - Click Create flow variable
     - Name: menu\_selection
     - Description: Track caller intent for routing.
@@ -291,9 +291,9 @@
   + Validation should now run again and show 0 errors.
   + Publish Flow using the Latest version label.
 * Connect the IVR and Queue flows.
-  + Return to Control Hub à Flows, which should still be opened in a previous browser tab.
-  + Open your “STUxx\_Lab2” flow and go into Edit mode
-  + Disconnect the Play\_Option\_Selection node from the DisconnectContact node
+  - Return to Control Hub -> Flows, which should still be opened in a previous browser tab.
+  - Open your “STUxx\_Lab2” flow and go into Edit mode
+  - Disconnect the Play\_Option\_Selection node from the DisconnectContact node
 
 ![](assets/docx-image-3031.png)
 
@@ -314,7 +314,7 @@
   + Select the GoTo node
     - Rename: Goto\_Queue
     - Description: Goto a new flow to queue the call.
-    - Flow destination settings à Destination type: Flow
+    - Flow destination settings -> Destination type: Flow
     - Select “Static Flow”
     - Flow: Select STUxx\_Queue\_Flow\_Lab3 built previously from the pull down.
     - Choose version label: Latest
@@ -326,8 +326,8 @@
 
 ![](assets/docx-image-3036.png)
 
-  + - Click Validation
-    - Publish as Latest
+  + Click Validation
+  - Publish as Latest
 
 ![](assets/docx-image-3037.png)
 
@@ -335,18 +335,20 @@
 
 * Pull up an incognito browser
 * Log in as an agent with your agent account at <https://desktop.wxcc-us1.cisco.com/>
+  + Enter your username (STUxx.agent@wx1ccelab.wbx.ai) where “xx” is your student number 
+  + Enter your password: Migration101!
   + Select “STUxx\_Team1”
-  + Handle calls using: “Desktop”
-  + Save & Continue
-  + Click to acknowledge emergency service notification for using desktop/webrtc
-  + If prompted for microphone permission, click allow
-* Return to the browser tab for Collaboration Control Hub à Contact Center à “Desktop Experience à Select Desktop Layouts
+    - Handle calls using: “Desktop”
+    - Save & Continue
+    - Click to acknowledge emergency service notification for using desktop/webrtc
+    - If prompted for microphone permission, click allow
+* Return to the browser tab for Collaboration Control Hub -> Contact Center -> “Desktop Experience -> Select Desktop Layouts
 * Copy the Global Layout
-  + Rename: STUxx\_Desktop\_Layout
-  + Description: (optional)
-  + Remove the default teams and add your 2 new teams “STUxx\_Team1 and STUxx\_Team2 from pull down.
-  + Click “Download default desktop layout”
-  + Find the download and open the file in notepad or notepad++
+  - Rename: STUxx\_Desktop\_Layout
+  - Description: (optional)
+  - Remove the default teams and add your 2 new teams “STUxx\_Team1 and STUxx\_Team2 from pull down.
+  - Click “Download default desktop layout”
+  - Find the download and open the file in notepad or notepad++
     - Change the “appTitle” on row 4 from “Webex Contact Center” to “STUXX\_My Test Agent”
     - Set the “logo” on row 5 to url: `{% raw %}https://storage.googleapis.com/gcp-wxcctoolkit-nprd-41927.appspot.com/assets/1HWbEUeZk1YqiTLqMlB93ABQcPN2/cisco-webex-meeting-logo-png_seeklogo-372182.png{% endraw %}`
     - Save notepad file with new name: STUxx\_Desktop.json
