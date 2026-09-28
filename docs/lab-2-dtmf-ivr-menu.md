@@ -76,11 +76,12 @@
 
 ![](assets/docx-image-2009.png)
 
-  + Under the Search activities on the left hand side of the Flow Designer 🡪 Search for “Set Variable”
+  + Under the Search activities on the left hand side of the Flow Designer -> Search for “Set Variable”
 
 ![](assets/docx-image-2010.png)
 
-  + Move the NewPhoneContact node to the left to make some room between it and the WelcomeMessage node. Then drag a Set Variable node between the NewPhoneContact node and the WelcomeMessage node
+  + Move the NewPhoneContact node to the left to make some room between it and the WelcomeMessage node. 
+  + Drag a Set Variable node between the NewPhoneContact node and the WelcomeMessage node
   + Delete the path from the NewPhoneContact to the WelcomeMessage
 
 ![](assets/docx-image-2011.png)
@@ -113,16 +114,17 @@
   + Clear the “Search Activities” field and add a new Menu Node after the WelcomeMessage
   + Delete the success path out arrow of the Welcome Message and connect to new Menu Node
   + Select Menu Node
-    - Rename the node/change the Activity label “Main\_Menu”. ![Lights On with solid fill](assets/docx-image-2017.png)Remember to click on the check mark to save the Activity label.
+    - Rename the node/change the Activity label “Main\_Menu”. 
+    Note: Remember to click on the check mark to save the Activity label.
 
 ![](assets/docx-image-2018.png)
-  + - Scroll down to the “prompt section”
-    - Select Enable text-to-speech
-    - Select “Cisco Cloud Text-to-Speech” from Connector pull down
-    - Click “Add text-to-speech message” button
-    - Add text to speech messages for 2 options: “Press 1 for English. Press 2 for Spanish”
-    - Click trashcan to delete audio file entry
-    - Minimize the “prompt” section
+  + Scroll down to the “prompt section”
+  - Select Enable text-to-speech
+  - Select “Cisco Cloud Text-to-Speech” from Connector pull down
+  - Click “Add text-to-speech message” button
+  - Add text to speech messages for 2 options: “Press 1 for English. Press 2 for Spanish”
+  - Click trashcan to delete audio file entry
+  - Minimize the “prompt” section
 
 ![](assets/docx-image-2019.png)
 
@@ -164,7 +166,7 @@
 
 ![](assets/docx-image-2024.png)
 
-  + Drag a “PlayMessage” node to canvas
+  + Drag a new “PlayMessage” node to the canvas
   + Connect the success paths of both “SetVar” nodes to the new PlayMessage Node
 
 ![](assets/docx-image-2025.png)
@@ -181,16 +183,16 @@
 
 ![](assets/docx-image-2026.png)
 
-* Menu Error Path build
-  + Drag another PlayMessage node to the canvas
-  + Connect the Main\_Menu node “No-Input Timeout” and “Unmatched Entry” to the new PlayMessage node
-  + Click on PlayMessage node
-  + Rename the node/change the Activity label: Play\_Menu\_Error
-  + Select Enable text-to-speech
-  + Select “Cisco Cloud Text-to-Speech” from Connector pull down
-  + Click “Add text-to-speech message”
-  + In the text-to-speech message: “Your entry was not recognized” (no quotes)
-  + Click trashcan to delete audio file entry
++ Menu Error Path build
+  - Drag a new PlayMessage node to the canvas
+  - Connect the Main\_Menu node “No-Input Timeout” and “Unmatched Entry” to the new PlayMessage node
+  - Click on PlayMessage node
+  - Rename the node/change the Activity label: Play\_Menu\_Error
+  - Select Enable text-to-speech
+  - Select “Cisco Cloud Text-to-Speech” from Connector pull down
+  - Click “Add text-to-speech message”
+  - In the text-to-speech message: “Your entry was not recognized” (no quotes)
+  - Click trashcan to delete audio file entry
 
 ![](assets/docx-image-2027.png)
 
@@ -205,7 +207,7 @@
     - Select “ni\_nm\_counter” variable from the drop down menu
     - Set value: `{% raw %}{{ni_nm_counter+1}}{% endraw %}`
     - Click on formula test icon in set value box (looks like </>)
-    - Press “Test expression”. Should see Test Result of 1
+    - Press “Test expression”. Should see Test Result of "false"
     - Change the ni\_nm\_counter to 5
     - Press “Test expression”. Should see Test Result of 6
     - Press “Apply changes” or “Close” if no changes were made
@@ -240,16 +242,16 @@
   + Enable Validation at the bottom-right
   + Resolve any errors
   + Publish Flow
-* In Control Hub 🡪 Channels rename your Entry point from STUxx\_Lab1\_EP to STUxx\_Lab2\_EP
+* In Control Hub -> Channels rename your Entry point from STUxx\_Lab1\_EP to STUxx\_Lab2\_EP
 * Change your “Routing Flow” dropdown from “STUxx\_Lab1” to “STUxx\_Lab2”
 * Click Save
 
 ![](assets/docx-image-2035.png)
 
-* Make three (3) calls into your flow and test the Main\_menu paths
-  + For the 1st call – select option 1 and listen to the prompts
-  + For the 2nd call – select option 2 and listen to the prompts
-  + For the 3rd call – do not select an option and listen to the prompts
++ Make three (3) calls into your flow and test the Main\_menu paths
+  - For the 1st call – select option 1 and listen to the prompts
+  - For the 2nd call – select option 2 and listen to the prompts
+  - For the 3rd call – do not select an option and listen to the prompts
 
 **Bonus Exercise (Time Permitting)**
 
