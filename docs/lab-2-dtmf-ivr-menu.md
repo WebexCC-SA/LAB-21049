@@ -13,11 +13,11 @@
 
 ## Instructions: Lab 2
 
-* Create a reportable Global Variable for tracking
-  + We will insert in our flows to start tracking and will show how to report on it in a later lab.
-  + From the Left Menu --> Under the Customer Experience Section --> “Click on Flows”
-  + Click on “Global Variables” tab
-  + Click on “Create a global variable”
+  + Create a reportable Global Variable for tracking
+    - We will insert in our flows to start tracking and will show how to report on it in a later lab.
+    - From the Left Menu --> Under the Customer Experience Section --> “Click on Flows”
+    - Click on “Global Variables” tab
+    - Click on “Create a global variable”
 
 ![](assets/docx-image-2001.png)
 
