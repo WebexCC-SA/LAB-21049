@@ -2,11 +2,11 @@
 
 ## Objectives:
 
-* Learn how the following features are configured and operate relative to CCE equivalent:
-  + Business Hours
-  + Position in Queue (PIQ) and Estimated Wait Time (EWT)
-  + Courtesy Call Back (CCB)
-  + Whisper and Compliance Messages
++ Learn how the following features are configured and operate relative to CCE equivalent:
+  - Business Hours
+  - Position in Queue (PIQ) and Estimated Wait Time (EWT)
+  - Courtesy Call Back (CCB)
+  - Whisper and Compliance Messages
 * Configure and use native WxCC transcription services
 * Experience different screen pop capabilities without custom gadgets.
 
@@ -24,10 +24,10 @@
 
 ## Instructions: Lab 5A – Business Hours
 
-* Within Collaboration Control Hub à Contact Center 🡪 Customer Experience
+* Within Collaboration Control Hub -> Contact Center -> Customer Experience
 * Click on “Business Hours” from navigation panel on left.
 * Click on “Overrides”
-  + Click on “Overrides”
+  + Click on "Add Overrides” button (top right)
   + Name: “STUxx\_Override”
   + Timezone: America/Chicago
   + Click “add a new override”
@@ -55,25 +55,25 @@
 
 ![](assets/docx-image-5003.png)
 
-  + Scroll down to Additional Settings 🡪 Holiday List: Select US Holidays
+  + Scroll down to Additional Settings -> Holiday List: Select US Holidays
   + Override: Select STUxx\_Override
   + Click “Create”
 
 ![](assets/docx-image-5004.png)
 
-* Within Collaboration Control Hub à Contact Center 🡪 Customer Experience
+* Within Collaboration Control Hub -> Contact Center -> Customer Experience
 * Click on “Flows” on Navigation on the left
 * Open your “STUxx\_Queue\_Flow\_Lab3” queue flow and put in edit mode
 * Disconnect arrow between “NewPhoneContact” node and “Case\_MenuOption” node
 
 ![](assets/docx-image-5005.png)
 
-* Drag Business Hours node onto the canvas between the NewPhoneContact” node and “Case\_MenuOption node
+* Drag Business Hours node onto the canvas before "NewPhoneContact” node and after “Case\_MenuOption" node
 * Select new Business Hours node
   + Activity label: BusinessHours\_Queue
   + Description: Testing business hours native node.
   + Select Static Business Hours
-    - Note: Variable Business Hours uses the Business Hours ID, not name.
+    Note: Variable Business Hours uses the Business Hours ID, not name.
   + Business hour: STUxx\_Working\_Hours from the pull-down menu
   + Select Enable decryption
 
@@ -111,7 +111,7 @@
 
 * Copy/Paste the UpdateCallPath\_SpanishQueue node
   + Update Activity label: UpdateCallPath\_Closed
-  + Update Variable settings 🡪set value: `{% raw %}{{STUxx_CallPath}}.BH_closed{% endraw %}`
+  + Update Variable settings ->set value: `{% raw %}{{STUxx_CallPath}}.BH_closed{% endraw %}`
 
 ![](assets/docx-image-5011.png)
 
@@ -120,7 +120,7 @@
 * Connect the “Holiday” path from BusinessHours to Closed\_Holiday Play Message node.
 * Connect the exit of the Closed\_Holiday play message node to UpdateCallPath\_Closed node.
 * Connect the “Default” path from BusinessHours to Closed\_AfterHours message node.
-  + Note: “Default” is defined as not working hours, holiday, or override.
+  Note: “Default” is defined as not working hours, holiday, or override.
 * Connect the Closed\_AfterHours message node exit to the UpdateCallPath\_Closed node.
 * Connect the “Override” path from BusinessHours to the Closed\_Override play message node.
 * Connect the Closed\_Override message node exit to the UpdateCallPath\_Closed node.
@@ -158,17 +158,17 @@
 
 * Drag a new “PlayMessage” node
   + Activity label: Play\_PIQ\_EWT
-  + Prompt 🡪 Enable text-to-speech
+  + Prompt -> Enable text-to-speech
   + Connector: Cisco Cloud Text-To-Speech
-  + Click “Add text-to-speech message”: `{% raw %}Your position in queue is {{GetQueueInfo_English.PIQ}} . Your estimated wait time in {{GetQueueInfo_English.EWT}}.{% endraw %}`
+  + Click “Add text-to-speech message”: `{% raw %}Your position in queue is {{GetQueueInfo_English.PIQ}}. Your estimated wait time in {{GetQueueInfo_English.EWT}}.{% endraw %}`
   + Delete Audio file
 
 ![](assets/docx-image-5016.png)
 
-* Connect GetQueueInfo\_English exit path to Play\_PIQ\_EWT node
-* Connect “Insufficient Information” path to Music queue loop (bypass 2 new nodes)
-* Connect “Failure” path to Music node (bypass new Play\_PIQ\_EWT node)
-  + Note: Although optional, highly recommend connecting the 2 failure paths to continue flow.
+* Connect "GetQueueInfo\_English" exit path to "Play\_PIQ\_EWT" node
+* Connect “Insufficient Information” path to "Music queue loop" (bypass 2 new nodes)
+* Connect “Failure” path to "Music" node (bypass new Play\_PIQ\_EWT node)
+  Note: Although optional, highly recommend connecting the 2 failure paths to continue flow.
 * Connect “Play\_PIQ\_EWT” exit path to queue “Music” node
 * Click “Validation”
 * Click “Publish Flow” as Latest
@@ -179,34 +179,34 @@
 
 * Open your STUxx\_Queue\_Flow\_Lab3 flow if not open anymore and put in edit mode
 * Move your queue loop starting with the play music node over to make room for new nodes.
-* Disconnect Play\_PIQ\_EWT exit to queue loop music node
-* Drag a “Menu” node and a “Callback” node to the canvas between the Play\_PIQ\_EWT and Music nodes.
-* Connect the Play\_PIQ\_EWT exit to the new “Menu” node
-* Select the new Menu node
+* Disconnect "Play\_PIQ\_EWT" exit to queue loop music node
+* Drag a “Menu” node and a “Callback” node to the canvas between the "Play\_PIQ\_EWT" and "Music" nodes.
+* Connect the "Play\_PIQ\_EWT" exit to the new “Menu” node
+* Select the new "Menu" node
   + Activity label: Queue\_Options
   + Activity description: Provide call deflection options in queue
-  + Prompt 🡪 Enable text-to-speech
+  + Prompt -> Enable text-to-speech
   + Connector: Cisco Cloud Text-To-Speech
   + Click “Add text-to-speech message”: If you would like a callback, press 1. Your place will be kept in queue.
   + Delete Audio file
   + Check “Make prompt interruptible”
-  + Custom menu links 🡪 “DIGIT NUMBER”: 1
-  + Custom menu links 🡪 LINK DESCRIPTION”: CCB
+  + Custom menu links -> “DIGIT NUMBER”: 1
+  + Custom menu links -> LINK DESCRIPTION”: CCB
 * Connect CCB path to Callback node
 
 ![](assets/docx-image-5018.png)
 
-* Connect “No-Input Timeout” and “Undefined Error” exit path to Music node
-* Connect the Unmatched Entry path back to the Queue\_Options menu node (itself)
+* Connect “No-Input Timeout” and “Undefined Error” exit path to "Music" node
+* Connect the "Unmatched Entry" path back to the "Queue\_Options" menu node (itself)
 
 ![](assets/docx-image-5019.png)
 
 * Select “Callback” node
   + Activity label: CCB
   + Activity description: Standard Webex Contact Center Courtesy Call Back
-  + “Callback settings 🡪 Callback dial number: no changes
+  + “Callback settings -> Callback dial number: no changes
   + Deselect “Register callback to different destination?”
-    - (Optional) If keep on, select STUxx\_TeamQueue so the call will be sent to your queue when an agent becomes available.
+    - (Optional) If kept on, select STUxx\_TeamQueue so the call will be sent to your queue when an agent becomes available.
   + Select “Static ANI” and first number on the Callback ANI
 * Connect CCB node failure path to queue loop “Music” node
 
@@ -214,14 +214,14 @@
 
 * Copy/Paste the UpdateCallPath\_Closed node
   + Activity label: UpdateCallPath\_CCB
-  + Variable settings 🡪 Set value: `{% raw %}{{STUxx_CallPath}}.CCB{% endraw %}`
+  + Variable settings -> Set value: `{% raw %}{{STUxx_CallPath}}.CCB{% endraw %}`
 
 ![](assets/docx-image-5021.png)
 
 * Add a new PlayMessage node
   + Activity label: CCB\_Message
   + Activity description: TTS Message played to caller
-  + Prompt 🡪 Enable text-to-speech
+  + Prompt -> Enable text-to-speech
   + Connector: Cisco Cloud Text-To-Speech
   + Click “Add text-to-speech message”: You have been tagged for callback. Talk to you soon.
   + Delete Audio file
@@ -248,7 +248,7 @@
 
 ## Instructions: Lab 5D – Whisper and Compliance Message
 
-* Within Collaboration Control Hub à Contact Center 🡪 Customer Experience
+* Within Collaboration Control Hub -> Contact Center -> Customer Experience
 * Click on “Audio Files” from navigation panel on left.
 * Select “Agent personal greetings” tab
 * Download the audio
@@ -299,19 +299,19 @@
 ![](assets/docx-image-5031.png)
 
 * Ensure your agent is logged in and Available
-* Make test call and ask Megan to transfer you to a human agent to hear the newly-added messages:
-  + Whisper greeting is only heard by agent.
-  + Compliance message is heard by both caller and agent.
-  + Agent greeting is heard by both caller and agent
-* (Optional) Toggle the announcements on and off and make test calls to see the difference.
++ Make test call and ask Megan to transfer you to a human agent to hear the newly-added messages:
+  - Whisper greeting is only heard by agent.
+  - Compliance message is heard by both caller and agent.
+  - Agent greeting is heard by both caller and agent
+  - (Optional) Toggle the announcements on and off and make test calls to see the difference.
 * End the call and select any available wrap-up code.
 
 ## Instructions: Lab 5E – Transcription/Screen Pop and Event flows
 
-* Within Collaboration Control Hub à Contact Center 🡪 Desktop Experience
+* Within Collaboration Control Hub -> Contact Center -> Desktop Experience
 * Click on “AI Features” from navigation panel on left.
 * Confirm “Real-Time Transcription” is turned on and “Apply to all queues”
-  + Note: This is allowing it (or disallowing it). There is still another setting to trigger transcription in a flow.
+  Note: This is allowing it (or disallowing it). There is still another setting to trigger transcription in a flow.
 
 ![](assets/docx-image-5032.png)
 
@@ -336,7 +336,7 @@
 * Copy the UpdateCallPath\_CCB node
 * Click “Event Flows” tab
 * Paste the UpdateCallPath\_CCB into the Event Flows Canvas
-  + Note: you can do this between flows also but both have to be in Edit mode
+  Note: you can do this between flows also but both have to be in Edit mode
 * Find the newly pasted node 😊 by zooming out or clicking the 9 dots to make it appear at the bottom of the green trigger nodes. Move it near the PhoneContactEnded event node.
   + Activity label: UpdateCallPath\_CallerHangup
   + Update set value: `{% raw %}{{STUxx_CallPath}}.CallerHangUp{% endraw %}`
