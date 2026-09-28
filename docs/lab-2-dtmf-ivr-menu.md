@@ -53,7 +53,7 @@
 
 ![](assets/docx-image-2007.png)
 
-   - Name: menu\_selection
+    - Name: menu\_selection
     - Description: Track the option selected from the menu.
     - Variable type: String
     - Default value: (leave blank)
