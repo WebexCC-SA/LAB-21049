@@ -16,7 +16,7 @@
 
 ## Instructions: Lab 7
 
-* Within Collaboration Control Hub à Contact Center à Customer Experience
+* Within Collaboration Control Hub -> Contact Center -> Customer Experience
 * Click on Queues
 * Click on the prebuilt SMS queue associated with your student ID (STUxx\_SMS\_Queue)
   + Edit (pencil) Group 1 in the Conversation distribution section
@@ -33,13 +33,13 @@
 
 ![](assets/docx-image-7003.png)
 
-* Within Collaboration Control Hub à Contact Center à Customer Experience
+* Within Collaboration Control Hub -> Contact Center -> Customer Experience
 * Click on Flows
 * Open your queue flow (STUxx\_Queue\_Flow) and put in edit mode
 * Click on Queue\_Options node
   + Update the Text-to-speech message by adding “If you would like to text to one of our SMS enabled agents, press 2.”
 
-![](assets/docx-image-7004.png)
+![](assets/docx-image-7004.png) 
 
   + Click on “+ Add new” under Custom menu links
   + Select “2” from the Digit Number pulldown
@@ -55,9 +55,9 @@
 
 * Drag a Play Message node and an HTTP Request node to the canvas
 * Select the PlayMessage node
-  + Activity label: Play\_SMS\_Transfer (remember to click the ![Checkmark outline](assets/docx-image-7007.png))
+  + Activity label: Play\_SMS\_Transfer (remember to click the checkmark)
   + Enable Text-to-Speech
-  + Connector: “Cisco Cloud Text-to-Speech
+  + Connector: “Cisco Cloud Text-to-Speech"
   + Click Add text-to-speech message: “Transferring you to your SMS queue.”
   + Delete the “Audio file”
 
@@ -81,7 +81,7 @@
 
 ![](assets/docx-image-7011.png)
 
-  + - Key: Key
+  + Key: Key
     - Value: eb46ec95-89ec-11f1-bc22-02568a99fbcf
   + Content type: Application/JSON
   + Request body:
@@ -96,7 +96,7 @@
 
 }
 
-  + - REPLACE “xx” with student ID number
+  - REPLACE “xx” with student ID number
 
 ![](assets/docx-image-7012.png)
 
