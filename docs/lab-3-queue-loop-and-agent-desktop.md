@@ -335,8 +335,8 @@
 
 * Pull up an incognito browser
 * Log in as an agent with your agent account at <https://desktop.wxcc-us1.cisco.com/>
-  + Enter your username (STUxx.agent@wx1ccelab.wbx.ai) where “xx” is your student number 
-  + Enter your password: Migration101!
+    + Enter your username (STUxx.agent@wx1ccelab.wbx.ai) where “xx” is your student number 
+    + Enter your password: Migration101!
   + Select “STUxx\_Team1”
     - Handle calls using: “Desktop”
     - Save & Continue
