@@ -17,13 +17,13 @@
 
 ## Instructions: Lab 4
 
-* Within Collaboration Control Hub à Contact Center 🡪 Overview page
+* Within Collaboration Control Hub -> Contact Center 🡪 Overview page
 * On the right side under Quick Links, click on Webex AI Agent
 
 ![](assets/docx-image-4001.png)
 
 * Click on “Import agent”
-* Import the “Wx1\_HelloWorld” AI agent json file provided
+* Import the “Wx1\_HelloWorld” AI agent json file provided  ([Agent Desktop and AI Agent Configs Files](./assets/download/Wx1_Lab-21049_Files.zip))
   + Click on Import Agent
   + Click on the Upload button and select the “Wx1\_HelloWorld” AI Agent json file provided
   + Agent Name: STUxx\_HelloWorld
@@ -49,7 +49,7 @@
 
 ![](assets/docx-image-4006.png)
 
-* Within Collaboration Control Hub à Contact Center
+* Within Collaboration Control Hub -> Contact Center
 * Click on Flows from the navigation panel
 * Create a copy of your “STUxx\_Lab2” flow
 * Open the newly created copy “Copy\_STUxx\_Lab2\_......”
@@ -63,18 +63,18 @@
 ![](assets/docx-image-4008.png)
 
 * Drag “Percent Allocation” node between the “WelcomeMessage” node and “Main\_Menu” node
-* Connect the welcome message node to the new Percent Allocation node
+* Connect the welcome message node to the new PercentAllocation node
 
 ![](assets/docx-image-4009.png)
 
-* Select the new Percent Allocation node and configure as follows:
-  + Activity Label: “IVR\_Divert”
-  + Activity description: Allocate calls between DTMF and AI agent IVR
-  + Rename “Allocation Default” to “DTMF IVR”
-  + Click “+ Add new” button
-  + Rename “New Allocation” to “AI Agent”
-  + Set Percent for IVR to 0 and AI Agent to 100
-  + Select enable decryption
++ Select the new PercentAllocation node and configure as follows:
+  - Activity Label: “IVR\_Divert”
+  - Activity description: Allocate calls between DTMF and AI agent IVR
+  - Rename “Allocation Default” to “DTMF IVR”
+  - Click “+ Add new” button
+  - Rename “New Allocation” to “AI Agent”
+  - Set Percent for IVR to 0 and AI Agent to 100
+  - Select enable decryption
 
 ![](assets/docx-image-4010.png)
 
@@ -114,7 +114,7 @@
 
 ![](assets/docx-image-4014.png)
 
-* Click ““+ Create flow variable”
+* Click “+ Create flow variable”
   + Add context flow variables for AI agent escalation
   + Create 3 variables of Type: String that are agent viewable:
     - callerFirstName with agent viewable label First Name
@@ -162,7 +162,7 @@
 
 ![](assets/docx-image-4020.png)
 
-* Within Collaboration Control Hub à Contact Center
+* Within Collaboration Control Hub -> Contact Center
 * Click on “Flows” from left navigation panel
 * Open the “STUxx\_Queue\_Flow\_Lab3” queue flow from Lab3 and Edit
 * Add flow variables for AI agent escalation
