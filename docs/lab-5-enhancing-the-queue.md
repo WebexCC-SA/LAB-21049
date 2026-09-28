@@ -310,7 +310,7 @@
 
 * Within Collaboration Control Hub -> Contact Center -> Desktop Experience
 * Click on “AI Features” from navigation panel on left.
-+ Confirm “Real-Time Transcription” is turned on and “Apply to all queues”
+* Confirm “Real-Time Transcription” is turned on and “Apply to all queues”
   Note: This is allowing it (or disallowing it). There is still another setting to trigger transcription in a flow.
 
 ![](assets/docx-image-5032.png)
@@ -335,7 +335,7 @@
 * Click “Main Flow” tab
 * Copy the UpdateCallPath\_CCB node
 * Click “Event Flows” tab
-+ Paste the UpdateCallPath\_CCB into the Event Flows Canvas
+* Paste the UpdateCallPath\_CCB into the Event Flows Canvas
   Note: you can do this between flows also but both have to be in Edit mode
 * Find the newly pasted node 😊 by zooming out or clicking the 9 dots to make it appear at the bottom of the green trigger nodes. Move it near the PhoneContactEnded event node.
   + Activity label: UpdateCallPath\_CallerHangup

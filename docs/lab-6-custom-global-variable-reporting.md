@@ -5,16 +5,16 @@
 * Learn how to do Call Type equivalent non-queue reporting using the global variables configured in previous labs
 * Introduction to WxCC reporting module as compared to CUIC
   + Understanding terminology and how they differ from CUIC.
-  + Explore standard and “transition” reports used to help migrations.
+  + Explore standard and “transition” reports in Analyzer used to help migrations.
 * Configure and modify several simple custom reports to meet equivalent CCE reporting requirements.
 
 ## Prerequisites:
 
-* Complete Labs 2-5
+* Complete Labs 1-5
 
 ## Instructions: Lab 6
 
-* Within Collaboration Control Hub à Contact Center à Customer Experience
+* Within Collaboration Control Hub -> Contact Center -> Customer Experience
 * Click on “Flows”
 * Open “STUxx\_Lab4” IVR flow and place in edit mode
 * Update the flow name: STUxx\_Lab6
@@ -76,7 +76,7 @@
 * Drag a Set Variable Node to the canvas
 * Select the new Set Variable node
   + Activity label: SetVar\_TransferResult\_Fail
-  + Variable settings à Variable: TransferResult
+  + Variable settings -> Variable: TransferResult
   + Enter Set Value: `{% raw %}Failed: {{BridgedTransfer_External.FailureDescription}} ({{BridgedTransfer_External.FailureCode}}{% endraw %}`
 
 ![](assets/docx-image-6009.png)
@@ -101,7 +101,7 @@
 
 * Make some test calls to option 4.
   + Feel free to change the number to your flows number or another number to test success.
-* Within Collaboration Control Hub à Contact Center à Overview à Quick Links
+* Within Collaboration Control Hub -> Contact Center -> Overview -> Quick Links
 * Click on Analyzer
   + This will cross-launch the analyzer reporting module
 * On the upper hand corner of the screen Click “Create new” and select “Folder”
