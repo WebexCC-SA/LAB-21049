@@ -94,42 +94,42 @@
 * (NO VPN)
 * Now it’s your turn! On your student workstation open a new Firefox/Chrome browser.
 * Log into Collaboration Control Hub (<HTTPS://admin.webex.com>)
-  + Enter your username **(**[**STUxx.admin@wx1ccelab.wbx.ai**](mailto:STUxx.admin@wx1ccelab.wbx.ai)**)** where “xx” is your student number
+  + Enter your username **STUxx.admin@wx1ccelab.wbx.ai** (where “xx” is your student number)
   + Enter your password: **Migration101!**
 
 ![](assets/docx-image-0017.png)
 
 ![](assets/docx-image-0018.png)
 
-* Accept the Terms of Service
+* **Accept** the Terms of Service
 
 ![](assets/docx-image-0019.png)
 
-* Click Accept All
-* Entitlement and Licensing
-* Within Collaboration Control Hub à Management
-  + Click Account
+* Click **Accept All**
+* **Entitlement and Licensing**
+* Within Collaboration Control Hub -> Management
+  + Click **Account**
   + This is where your Organization ID is found. You will typically be asked for this when enabling feature flags or troubleshooting issues with TAC.
 
 ![](assets/docx-image-0020.png)
 
 * Enable Agent and Supervisor
-  + Within Collaboration Control Hub à Management
-    - Click on Users
-    - Filter by your student number “STUxx”
+  - Within Collaboration Control Hub -> Management
+    - Click on **Users**
+    - **Filter by** your student number “STUxx”
 
 ![](assets/docx-image-0021.png)
 
   + - Click on your Agent and/or Supervisor
-    - Within Summary tab, scroll down to “Licenses”. Agent and Supervisor licenses shown below
-    - Click “Edit Licenses.” (Instructor will show how to assign net new contact center licensing)
+    - Within Summary tab, scroll down to **“Licenses”**. Agent and Supervisor licenses shown below
+    - Click **“Edit Licenses"**. (Instructor will show how to assign net new contact center licensing)
 
 ![](assets/docx-image-0022.png)
 
 ![](assets/docx-image-0023.png)
 
-* Within Collaboration Control Hub à Services
-* Click on “Contact Center”
+* Within Collaboration Control Hub -> Services
+  - Click on **“Contact Center”**
 
 ![](assets/docx-image-0024.png)
 
