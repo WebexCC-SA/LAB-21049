@@ -83,7 +83,7 @@
 * Connect IVR\_Divert node’s “AI agent” path to newly-created SetVar node.
 * Select new SetVar Node
   + Activity Label: SetVar\_Opt3
-    - Note: We will move this to the main menu later
+!!! note  "Note: We will move this to the main menu later"
   + Replace menu\_selection Set Value with : “A.I. Agent”
   + Replace STUxx\_CallPath Set Value with: `{% raw %}{{STUxx_CallPath}}.aiAgent{% endraw %}`
 

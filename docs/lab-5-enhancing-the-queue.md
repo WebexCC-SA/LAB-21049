@@ -73,7 +73,7 @@
   + Activity label: BusinessHours\_Queue
   + Description: Testing business hours native node.
   + Select Static Business Hours
-    Note: Variable Business Hours uses the Business Hours ID, not name.
+!!! note  "Note: Variable Business Hours uses the Business Hours ID, not name."
   + Business hour: STUxx\_Working\_Hours from the pull-down menu
   + Select Enable decryption
 
@@ -120,7 +120,7 @@
 * Connect the “Holiday” path from BusinessHours to Closed\_Holiday Play Message node.
 * Connect the exit of the Closed\_Holiday play message node to UpdateCallPath\_Closed node.
 * Connect the “Default” path from BusinessHours to Closed\_AfterHours message node.
-  Note: “Default” is defined as not working hours, holiday, or override.
+!!! note  "Note: “Default” is defined as not working hours, holiday, or override."
 * Connect the Closed\_AfterHours message node exit to the UpdateCallPath\_Closed node.
 * Connect the “Override” path from BusinessHours to the Closed\_Override play message node.
 * Connect the Closed\_Override message node exit to the UpdateCallPath\_Closed node.
@@ -168,7 +168,7 @@
 * Connect "GetQueueInfo\_English" exit path to "Play\_PIQ\_EWT" node
 * Connect “Insufficient Information” path to "Music queue loop" (bypass 2 new nodes)
 * Connect “Failure” path to "Music" node (bypass new Play\_PIQ\_EWT node)
-  Note: Although optional, highly recommend connecting the 2 failure paths to continue flow.
+!!! note  "Note: Although optional, highly recommend connecting the 2 failure paths to continue flow."
 * Connect “Play\_PIQ\_EWT” exit path to queue “Music” node
 * Click “Validation”
 * Click “Publish Flow” as Latest
@@ -311,7 +311,7 @@
 * Within Collaboration Control Hub -> Contact Center -> Desktop Experience
 * Click on “AI Features” from navigation panel on left.
 * Confirm “Real-Time Transcription” is turned on and “Apply to all queues”
-  Note: This is allowing it (or disallowing it). There is still another setting to trigger transcription in a flow.
+!!! note  "Note: This is allowing it (or disallowing it). There is still another setting to trigger transcription in a flow."
 
 ![](assets/docx-image-5032.png)
 
@@ -336,7 +336,7 @@
 * Copy the UpdateCallPath\_CCB node
 * Click “Event Flows” tab
 * Paste the UpdateCallPath\_CCB into the Event Flows Canvas
-  Note: you can do this between flows also but both have to be in Edit mode
+!!! note  "Note: you can do this between flows also but both have to be in Edit mode"
 * Find the newly pasted node 😊 by zooming out or clicking the 9 dots to make it appear at the bottom of the green trigger nodes. Move it near the PhoneContactEnded event node.
   + Activity label: UpdateCallPath\_CallerHangup
   + Update set value: `{% raw %}{{STUxx_CallPath}}.CallerHangUp{% endraw %}`

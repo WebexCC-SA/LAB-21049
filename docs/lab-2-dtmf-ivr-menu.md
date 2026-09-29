@@ -115,7 +115,7 @@
   + Delete the success path out arrow of the Welcome Message and connect to new Menu Node
   + Select Menu Node
     - Rename the node/change the Activity label “Main\_Menu”. 
-    Note: Remember to click on the check mark to save the Activity label.
+!!! note  "Note: Remember to click on the check mark to save the Activity label."
 
 ![](assets/docx-image-2018.png)
   + Scroll down to the “prompt section”
