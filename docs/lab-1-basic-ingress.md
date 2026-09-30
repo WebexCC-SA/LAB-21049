@@ -76,15 +76,15 @@
   
   + Modify the Welcome Message Text-To-Speech (TTS)
     - Scroll down to the **Text-to-speech message** free-form text box
-    - Replace the existing “Hello World” message with **You have successfully installed the Cisco Unified V X M L server.**
+    - Replace the existing “Hello World” message with **"You have successfully installed the Cisco Unified V X M L server."**
 
-  !!! note  "A little CCE humor."  
+!!! note  "A little CCE humor."  
 
 ![](assets/docx-image-1010.png)
 
   + Add an additional TTS message
     - Click on **Add text-to-speech message**
-    - Add message **Just kidding. You have successfully built your first WxCC Flow.**
+    - Add message **"Just kidding. You have successfully built your first WxCC Flow."**
 
 ![](assets/docx-image-1011.png)
 
@@ -93,7 +93,7 @@
 
 ![](assets/docx-image-1012.png)
 
-    - In the Choose a voice to test the prompt dialog box select **en-US-Maria** or **en-US-Daniel**. There are several other voice options. Feel free to listen to them in other languages as time permits.
+  + In the Choose a voice to test the prompt dialog box select **en-US-Maria** or **en-US-Daniel**. There are several other voice options. Feel free to listen to them in other languages as time permits.
 
 ![](assets/docx-image-1013.png)
 
