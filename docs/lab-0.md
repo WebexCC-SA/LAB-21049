@@ -121,15 +121,15 @@
 ![](assets/docx-image-0021.png)
 
   + - Click on your Agent and/or Supervisor
-    - Within **Summary** tab, scroll down to **“Licenses”**. Agent and Supervisor licenses shown below
-    - Click **“Edit Licenses"**. (Instructor will show how to assign net new contact center licensing)
+    - Within **Summary** tab, scroll down to **Licenses**. Agent and Supervisor licenses shown below
+    - Click **Edit Licenses"**. (Instructor will show how to assign net new contact center licensing)
 
 ![](assets/docx-image-0022.png)
 
 ![](assets/docx-image-0023.png)
 
 * Within **Collaboration Control Hub -> Services**
-  - Click on **“Contact Center”**
+  - Click on **Contact Center**
 
 ![](assets/docx-image-0024.png)
 
