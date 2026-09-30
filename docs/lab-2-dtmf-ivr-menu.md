@@ -22,14 +22,14 @@
 ![](assets/docx-image-2001.png)
 
   + Click **Create a global variable** button in the upper right
-    - Name: STUxx\_CallPath
+    - Name: **STUxx\_CallPath**
     - Description: **Path the caller took through the flow**
-    - Variable type: String
-    - Report settings: Make Reportable
+    - Variable type: **String**
+    - Report settings: **Make Reportable**
     - Click **Create** ![](assets/docx-image-2002.png)
 * Build 2nd flow
   + Copy flow you created in lab 1A
-    - Click the … for STUxx\_Lab1 and select **Copy**
+    - Click the **…** for STUxx\_Lab1 and select **Copy**
 
 ![](assets/docx-image-2003.png)
 
@@ -39,11 +39,11 @@
 
 ![](assets/docx-image-2004.png)
 
-  + Save new name
+  + **Save** new name
 
 ![](assets/docx-image-2005.png)
 
-  + Click in open area to bring up Global Flow properties
+  + Click in open area to bring up **Global Flow properties**
   + Update the flow description: **Flow for Labs 2 and 4**
 
 ![](assets/docx-image-2006.png)
@@ -53,30 +53,30 @@
 
 ![](assets/docx-image-2007.png)
 
-  + Name: menu\_selection
-  - Description: Track the option selected from the menu.
-  - Variable type: String
+  + Name: **menu\_selection**
+  - Description: **Track the option selected from the menu.**
+  - Variable type: **String**
   - Default value: (leave blank)
   - Enable **Agent Viewable**
   - Desktop label: **Caller Intent**
-  - Click Create
+  - Click **Create**
 
 ![](assets/docx-image-2008.png)
 
   + Create a second flow variable
-    - Click Create flow variables
-    - Name: ni\_nm\_counter
-    - Description: Track the no input and no matches.
-    - Variable Type: Integer
-    - Default value: 0
-    - Click Create
+    - Click **Create flow variables**
+    - Name: **ni\_nm\_counter**
+    - Description: **Track the no input and no matches.**
+    - Variable Type: **Integer**
+    - Default value: **0**
+    - Click **Create**
   + Under Global variables click on **+ Add global variables**
     - Select your **STUxx\_CallPath** with xx matching your student number, and both existing **TransferDestination** and **TransferResult** global variables
     - Click **Add**
 
 ![](assets/docx-image-2009.png)
 
-  + Under the Search activities on the left hand side of the Flow Designer -> Search for **Set Variable**
+  + Under the Search activities on the left hand side of the **Flow Designer -> Search** for **Set Variable**
 
 ![](assets/docx-image-2010.png)
 
@@ -91,8 +91,8 @@
 ![](assets/docx-image-2012.png)
 
   + Click on the new Set Variable Node
-    - Rename the node/change the Activity label: SetInitialData
-    - Description: Set or initialize and variables for use later.
+    - Rename the node/change the Activity label: **SetInitialData**
+    - Description: **Set or initialize and variables for use later.**
 
 ![](assets/docx-image-2013.png)
 
@@ -113,13 +113,13 @@
 
   + Clear the **Search Activities** field and add a new Menu Node after the WelcomeMessage
   + Delete the success path out arrow of the Welcome Message and connect to new Menu Node
-  + Select Menu Node
+  + Select **Menu Node**
     - Rename the node/change the Activity label **Main\_Menu**. 
 !!! note  "Note: Remember to click on the check mark to save the Activity label."
 
 ![](assets/docx-image-2018.png)
   + Scroll down to the **prompt section**
-  - Select Enable text-to-speech
+  - Select **Enable text-to-speech**
   - Select **Cisco Cloud Text-to-Speech** from Connector pull down
   - Click **Add text-to-speech message** button
   - Add text to speech messages for 2 options: **Press 1 for English. Press 2 for Spanish**
@@ -140,8 +140,8 @@
   + Drag a **Set Variable** Node on to the Flow Designer Canvas after the Menu
   + Connect **English** to this set variable node
   + Click on the Set Variable Node
-    - Rename the node/change the Activity label: SetVar\_Opt1
-    - Description: (Optional)
+    - Rename the node/change the Activity label: **SetVar\_Opt1**
+    - Description: **(Optional)**
     - Under the Variable settings select **menu\_selection** variable from the drop-down menu
     - Set value: **English**
 
@@ -150,14 +150,14 @@
   + Click **+ Add new** under Variable settings to set another variable
     - Select **STUxx\_CallPath** variable from the pulldown
     - Set value: `{% raw %}{{STUxx_CallPath}}.english{% endraw %}`
-      * Feel free to test with test expression icon![](assets/docx-image-2022.png) , entering STUxx\_Lab2\_IN from the SetInitialData node as the value for STUxx\_CallPath
+      * Feel free to test with test expression icon![](assets/docx-image-2022.png) ,entering STUxx\_Lab2\_IN from the SetInitialData node as the value for STUxx\_CallPath
 
 ![](assets/docx-image-2023.png)
 
   + Right click on **SetVar\_Opt1** and copy. If the browser prompts you to approve, click Allow.
     - Right click mouse in open space under **SetVar\_Opt1** and **paste**
-    - Rename the node/change the Activity label: SetVar\_Opt2
-    - Description: (Optional)
+    - Rename the node/change the Activity label: **SetVar\_Opt2**
+    - Description: **(Optional)**
     - For variable **menu\_selection**
     - Set value: **Spanish**
     - For variable STUxx_CallPath, set value: `{% raw %}{{STUxx_CallPath}}.spanish{% endraw %}`
@@ -167,18 +167,18 @@
 ![](assets/docx-image-2024.png)
 
   + Drag a new **PlayMessage** node to the canvas
-  + Connect the success paths of both **SetVar** nodes to the new PlayMessage Node
+  + Connect the success paths of both **SetVar** nodes to the new **PlayMessage** node
 
 ![](assets/docx-image-2025.png)
 
   + Open the PlayMessage node
-    - Rename the node/change the Activity label: Play\_Option\_Selection
-    - Select Enable text-to-speech
+    - Rename the node/change the Activity label: **Play\_Option\_Selection**
+    - Select Enable **text-to-speech**
     - Select **Cisco Cloud Text-to-Speech** from Connector pull down
     - Click **Add text-to-speech message** button twice
     - Click trashcan to delete audio file entry
-    - In the first text-to-speech message: You picked {{menu_selection}} path.
-    - In the second text-to-speech message: This was option `{% raw %}{{Main_Menu.OptionEntered}}{% endraw %}`
+    - In the first text-to-speech message: **You picked {{menu_selection}} path.**
+    - In the second text-to-speech message: **This was option** `{% raw %}{{Main_Menu.OptionEntered}}{% endraw %}`
   + Connect the exit of the PlayMessage node to the DisconnectContact Node
 
 ![](assets/docx-image-2026.png)
@@ -186,9 +186,9 @@
 + Menu Error Path build
   - Drag a new PlayMessage node to the canvas
   - Connect the Main\_Menu node **No-Input Timeout** and **Unmatched Entry** to the new PlayMessage node
-  - Click on PlayMessage node
-  - Rename the node/change the Activity label: Play\_Menu\_Error
-  - Select Enable text-to-speech
+  - Click on **PlayMessage** node
+  - Rename the node/change the Activity label: **Play\_Menu\_Error**
+  - Select **Enable text-to-speech**
   - Select **Cisco Cloud Text-to-Speech** from Connector pull down
   - Click **Add text-to-speech message**
   - In the text-to-speech message: **Your entry was not recognized** (no quotes)
@@ -197,18 +197,18 @@
 ![](assets/docx-image-2027.png)
 
   + Drag a Set Variable node to the canvas
-    - Connect the outbound of the **Play\_Menu\_Error** node to the newly-added Set Variable node
+    - Connect the outbound of the **Play\_Menu\_Error** node to the newly-added **Set Variable** node
 
 ![](assets/docx-image-2028.png)
 
   +  Click on the Set Variable Node
-    - Rename the node/change the Activity label: Increment\_NI\_NM\_Counter
-    - Description: (Optional)
+    - Rename the node/change the Activity label: **Increment\_NI\_NM\_Counter**
+    - Description: **(Optional)**
     - Select **ni\_nm\_counter** variable from the drop down menu
     - Set value: `{% raw %}{{ni_nm_counter+1}}{% endraw %}`
-    - Click on formula test icon in set value box (looks like </>)
+    - Click on formula test icon in set value box (looks like **</>**)
     - Press **Test expression**. Should see Test Result of "false"
-    - Change the ni\_nm\_counter to 5
+    - Change the **ni\_nm\_counter** to **5**
     - Press **Test expression**. Should see Test Result of 6
     - Press **Apply changes** or **Close** if no changes were made
 
@@ -220,18 +220,18 @@
 ![](assets/docx-image-2030.png)
 
   + Click on the new Condition Node
-    - Rename the node/change the Activity label: Check\_NI\_NM\_Counter
-    - Description: (Optional)
+    - Rename the node/change the Activity label: **Check\_NI\_NM\_Counter**
+    - Description: **(Optional)**
     - Set Condition Expression to value: `{% raw %}{{ni_nm_counter>2}}{% endraw %}`
-    - Click on formula test icon in set value box (looks like </>)
+    - Click on formula test icon in set value box (looks like **</>**)
     - Press **test Expression**. Should see Test Result of **false**
-    - Change the ni\_nm\_counter to 5
+    - Change the **ni\_nm\_counter** to **5**
     - Press **Test expression**. Should see Test Result of **true**
     - Press **Apply changes** or **Close** if no changes were made
 
 ![](assets/docx-image-2031.png)
 
-  + Connect the **True** path of the Condition node to the DisconnectContact Node
+  + Connect the **True** path of the Condition node to the **DisconnectContact** node
 
 ![](assets/docx-image-2032.png)
 
@@ -239,12 +239,12 @@
 
 ![](assets/docx-image-2034.png)
 
-  + Enable Validation at the bottom-right
+  + Enable **Validation** at the bottom-right
   + Resolve any errors
-  + Publish Flow
-* In Control Hub -> Channels rename your Entry point from STUxx\_Lab1\_EP to STUxx\_Lab2\_EP
+  + **Publish Flow**
+* In **Control Hub -> Channels** rename your Entry point from STUxx\_Lab1\_EP to **STUxx\_Lab2\_EP**
 * Change your **Routing Flow** dropdown from **STUxx\_Lab1** to **STUxx\_Lab2**
-* Click Save
+* Click **Save**
 
 ![](assets/docx-image-2035.png)
 
@@ -256,13 +256,13 @@
 **Bonus Exercise (Time Permitting)**
 
 * Navigate back to your STUxx\_Lab2 browser tab
-  + Select Analyze at bottom left side of the screen
+  + Select **Analyze** at bottom left side of the screen
 
 **![](assets/docx-image-2036.png)**
 
 * Click **Last 15 minutes** under the **Set the date and time range for your data** section
     - Take note of the date and time range options
-  + Click on Main\_Menu node to drill down
+  + Click on **Main\_Menu node** to drill down
     - For the interaction with outcome **error** -> Click on **View in debug**
 
 **![](assets/docx-image-2037.png)**
@@ -277,6 +277,6 @@
 
 **![](assets/docx-image-2039.png)**
 
-  + Select Design at bottom right to exit back to build
+  + Select **Design** at bottom right to exit back to build
 
 ## Finish Lab 2
