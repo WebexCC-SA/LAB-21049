@@ -23,9 +23,9 @@
 
 ![](assets/docx-image-7001.png)
 
-  + - Remove **Sandbox Team AgentType** Team
-    - Check one or more of your built teams
-    - Click **Save**
+  + Remove **Sandbox Team AgentType** Team
+  - Check one or more of your built teams
+  - Click **Save**
 
 ![](assets/docx-image-7002.png)
 
@@ -89,7 +89,7 @@
 **{**
 **"phone": "12148360352",**
 **"message": "This is a transfer from your voice queue.",**
-**"studentID": "STUxx"
+**"studentID": "STUxx"**
 **}**
 
   - REPLACE **xx** with student ID number
