@@ -24,7 +24,7 @@
 
 ## Instructions: Lab 5A – Business Hours
 
-* Within Collaboration Control Hub -> Contact Center -> Customer Experience
+* Within **Collaboration Control Hub -> Contact Center -> Customer Experience**
 * Click on **Business Hours** from navigation panel on left.
 * Click on **Overrides**
   + Click on **Add Overrides** button (top right)

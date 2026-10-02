@@ -16,50 +16,50 @@
 
 ## Instructions: Lab 7
 
-* Within Collaboration Control Hub -> Contact Center -> Customer Experience
-* Click on Queues
+* Within **Collaboration Control Hub -> Contact Center -> Customer Experience**
+* Click on **Queues**
 * Click on the prebuilt SMS queue associated with your student ID (STUxx\_SMS\_Queue)
-  + Edit (pencil) Group 1 in the Conversation distribution section
+  + **Edit** (pencil) Group 1 in the Conversation distribution section
 
 ![](assets/docx-image-7001.png)
 
-  + - Remove “Sandbox Team AgentType” Team
+  + - Remove **Sandbox Team AgentType** Team
     - Check one or more of your built teams
-    - Click Save
+    - Click **Save**
 
 ![](assets/docx-image-7002.png)
 
-  + Click Save
+  + Click **Save**
 
 ![](assets/docx-image-7003.png)
 
-* Within Collaboration Control Hub -> Contact Center -> Customer Experience
-* Click on Flows
-* Open your queue flow (STUxx\_Queue\_Flow) and put in edit mode
+* Within **Collaboration Control Hub -> Contact Center -> Customer Experience**
+* Click on **Flows**
+* Open your queue flow **(STUxx\_Queue\_Flow)** and put in **edit** mode
 * Click on Queue\_Options node
-  + Update the Text-to-speech message by adding “If you would like to text to one of our SMS enabled agents, press 2.”
+  + Update the Text-to-speech message by adding **“If you would like to text to one of our SMS enabled agents, press 2.**
 
 ![](assets/docx-image-7004.png) 
 
-  + Click on “+ Add new” under Custom menu links
-  + Select “2” from the Digit Number pulldown
-  + Rename the Link Description to “SMS\_Queue”
+  + Click on **+ Add new** under Custom menu links
+  + Select **2** from the Digit Number pulldown
+  + Rename the Link Description to **SMS\_Queue**
 
 ![](assets/docx-image-7005.png)
 
-* Copy/Paste the UpdateCallPath\_CCB node
-  + Activity label: UpdateCallPath\_SMS
+* Copy/Paste the **UpdateCallPath\_CCB** node
+  + Activity label: **UpdateCallPath\_SMS**
   + Update set value to: `{% raw %}{{STUxx_CallPath}}.SMS{% endraw %}`
 
 ![](assets/docx-image-7006.png)
 
 * Drag a Play Message node and an HTTP Request node to the canvas
 * Select the PlayMessage node
-  + Activity label: Play\_SMS\_Transfer (remember to click the checkmark)
-  + Enable Text-to-Speech
-  + Connector: “Cisco Cloud Text-to-Speech"
-  + Click Add text-to-speech message: “Transferring you to your SMS queue.”
-  + Delete the “Audio file”
+  + Activity label: **Play\_SMS\_Transfer** (remember to click the **checkmark**)
+  + **Enable Text-to-Speech**
+  + Connector: **Cisco Cloud Text-to-Speech**
+  + Click Add text-to-speech message: **Transferring you to your SMS queue.**
+  + Delete the **Audio file**
 
 ![](assets/docx-image-7008.png)
 
@@ -70,43 +70,39 @@
 ![](assets/docx-image-7009.png)
 
 * Click on the HTTPRequest node
-  + Activity label to: Transfer\_to\_SMS
-  + Uncheck “Use authenticated endpoint”
-  + Request URL: <https://hooks.us.webexconnect.io/events/5T8RM8756B>
-  + Method: POST
+  + Activity label to: **Transfer\_to\_SMS**
+  + Uncheck **Use authenticated endpoint**
+  + Request URL: **<https://hooks.us.webexconnect.io/events/5T8RM8756B>**
+  + Method: **POST**
 
 ![](assets/docx-image-7010.png)
 
-  + Add 1 HTTP request headers (“+ Add new) button
+  + Add 1 HTTP request headers **(+ Add new)** button
 
 ![](assets/docx-image-7011.png)
 
-  + Key: Key
-    - Value: eb46ec95-89ec-11f1-bc22-02568a99fbcf
-  + Content type: Application/JSON
+  + Key: **Key**
+    - Value: **eb46ec95-89ec-11f1-bc22-02568a99fbcf**
+  + Content type: **Application/JSON**
   + Request body:
 
-{
-
+'{% raw %}{
 "phone": "12148360352",
-
 "message": "This is a transfer from your voice queue.",
-
 "studentID": "STUxx"
+}{% endraw %}`
 
-}
-
-  - REPLACE “xx” with student ID number
+  - REPLACE **xx** with student ID number
 
 ![](assets/docx-image-7012.png)
 
-  + Select “Enable decryption”
+  + Select **Enable decryption**
 
 ![](assets/docx-image-7013.png)
 
 * Connect the Transfer\_to\_SMS node exit path to a DisconnectContact node
-* Click on Validation
-* Click on Publish Flow Save as Latest
+* Click on **Validation**
+* Click on **Publish Flow** save as **Latest**
 
 ![](assets/docx-image-7014.png)
 
