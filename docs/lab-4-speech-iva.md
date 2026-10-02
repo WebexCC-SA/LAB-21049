@@ -17,7 +17,7 @@
 
 ## Instructions: Lab 4
 
-* Within Collaboration **Control Hub -> Contact Center 🡪 Overview** page
+* Within Collaboration **Control Hub -> Contact Center -> Overview** page
 * On the right side under Quick Links, click on **Webex AI Agent**
 
 ![](assets/docx-image-4001.png)
@@ -121,7 +121,7 @@
     - **callerLastName** with agent viewable label **Last Name** and click **Agent editable**
     - **callerLanguag*e** with agent viewable label **Language**
   + Create 1 string variable that is not agent viewable:
-    - **aiAgentResponse**
+    - name: **aiAgentResponse**
 
 ![](assets/docx-image-4015.png)
 
