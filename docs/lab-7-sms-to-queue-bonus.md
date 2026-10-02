@@ -86,11 +86,11 @@
   + Content type: **Application/JSON**
   + Request body:
 
-'{% raw %}{
-"phone": "12148360352",
-"message": "This is a transfer from your voice queue.",
-"studentID": "STUxx"
-}{% endraw %}`
+**{**
+**"phone": "12148360352",**
+**"message": "This is a transfer from your voice queue.",**
+**"studentID": "STUxx"
+**}**
 
   - REPLACE **xx** with student ID number
 
