@@ -45,10 +45,12 @@ extra_javascript:
 plugins:
   - search
   - macros
-  # - with-pdf:
-  #     cover_title: LABXXX-1234
-  #     cover_subtitle: My famous WebexOne Lab
-  #     cover_logo: template_assets/wx1Splash_new.gif
+  - to-pdf:
+       cover_title: LAB-21049
+       cover_subtitle: WebexOne 2026 - Migrating From CCE On-premises to the Cloud (with WxCC)
+       cover_logo: template_assets/wx1Splash_new.gif
+       ordered_chapter_level: 1
+       enabled: true 
   - glightbox:
       touchNavigation: true
       loop: false
